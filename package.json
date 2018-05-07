@@ -1,0 +1,52 @@
+{
+  "name": "vue-gallery-slideshow",
+  "version": "1.0.0",
+  "description": "Gallery plugin for Vue.js",
+  "main": "dist/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "node_modules/.bin/eslint ./",
+    "build": "node_modules/.bin/rollup -c ./rollup.config.js && NODE_ENV=production node_modules/.bin/rollup -c ./rollup.config.js",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KitchenStories/vue-gallery-slideshow.git"
+  },
+  "keywords": [
+    "vue-gallery-slideshow",
+    "gallery",
+    "slideshow",
+    "images",
+    "photos",
+    "viewer",
+    "vue-component",
+    "vue-plugin",
+    "slider",
+    "vuejs"
+  ],
+  "author": "Norman Sander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KitchenStories/vue-gallery-slideshow/issues"
+  },
+  "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.6.1",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-sass": "^0.6.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue-template-compiler": "^2.5.4"
+  }
+}
