@@ -1,7 +1,7 @@
 {
   "name": "vue-gallery-slideshow",
-  "version": "1.0.0",
-  "description": "Gallery plugin for Vue.js",
+  "version": "1.0.1",
+  "description": "Full responsive image gallery for VueJS.",
   "main": "dist/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
