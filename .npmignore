@@ -5,6 +5,7 @@
 doc/
 .git/
 _config.yml
-CHANGELOG.md
+*.md
 .codeclimate.yml
 examples/
+src/
