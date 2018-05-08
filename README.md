@@ -5,6 +5,8 @@
 
 # vue-gallery-slideshow
 
+![](https://github.com/KitchenStories/vue-gallery-slideshow/blob/master/images/demo.gif)
+
 ## Installation
 
 #### NPM
