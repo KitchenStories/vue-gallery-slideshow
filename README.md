@@ -1,5 +1,6 @@
 <p>
   <a href="https://travis-ci.org/KitchenStories/vue-gallery-slideshow"><img src="https://img.shields.io/travis/KitchenStories/vue-gallery-slideshow.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/vue-gallery-slideshow"><img src="https://img.shields.io/npm/dt/vue-gallery-slideshow.svg?style=flat-square"></a>
 </p>  
 
 # vue-gallery-slideshow

@@ -4,6 +4,7 @@
   "description": "Full responsive image gallery for VueJS.",
   "main": "dist/js/index.js",
   "scripts": {
+    "prepublish": "npn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "node_modules/.bin/eslint ./",
     "build": "node_modules/.bin/rollup -c ./rollup.config.js && NODE_ENV=production node_modules/.bin/rollup -c ./rollup.config.js",
@@ -25,7 +26,11 @@
     "vue-component",
     "vue-plugin",
     "slider",
-    "vuejs"
+    "viewer",
+    "carousel",
+    "vue",
+    "vuejs",
+    "vuejs-plugin"
   ],
   "author": "Norman Sander",
   "license": "MIT",
