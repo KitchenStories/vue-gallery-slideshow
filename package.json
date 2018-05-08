@@ -1,6 +1,6 @@
 {
   "name": "vue-gallery-slideshow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Full responsive image gallery for VueJS.",
   "main": "dist/js/index.js",
   "scripts": {
@@ -34,19 +34,20 @@
   },
   "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "eslint": "^4.6.1",
-    "rollup": "^0.57.1",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-sass": "^0.6.0",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-sass": "^0.6.1",
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
     "vue-template-compiler": "^2.5.4"
-  }
+  },
+  "dependencies": {}
 }
