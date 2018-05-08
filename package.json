@@ -1,6 +1,6 @@
 {
   "name": "vue-gallery-slideshow",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Full responsive image gallery for VueJS.",
   "main": "dist/js/index.js",
   "scripts": {

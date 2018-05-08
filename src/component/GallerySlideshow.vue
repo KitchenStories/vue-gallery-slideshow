@@ -2,11 +2,11 @@
   transition(name='modal')
     .modal-slideshow(@click='close', v-if='imgIndex !== null')
       .modal-slideshow__close(@click="close") x
-      button.modal-slideshow__prev(@click.stop="onPrev")
+      button.modal-slideshow__prev(@click.stop="onPrev") &lt;
       .modal-slideshow__container(@click.stop="onNext", v-if="images")
         .modal-slideshow__container__image
           img.modal-slideshow__container__image__img(@click.stop="onNext", :src="imageUrl")
-      button.modal-slideshow__next(@click.stop="onNext")
+      button.modal-slideshow__next(@click.stop="onNext") &gt;
       .modal-slideshow__gallery(ref="gallery")
         .modal-slideshow__gallery__title(v-if="images") {{ imgIndex + 1 }} / {{ images.length }}
         .modal-slideshow__gallery__container(
@@ -157,15 +157,20 @@
       margin-top: -25px;
       width: 50px;
       height: 50px;
-      background-repeat: no-repeat;
-      background-position: center;
       z-index: 999;
       cursor: pointer;
+      font-size: 40px;
+      color: #fff;
+      background-color: transparent;
+      border: none;
+
+      &:focus {
+        outline: 0;
+      }
     }
 
     &__prev {
       left: 0;
-      margin-top: -25px;
       //background-image: url('/images/arrow_white_left.svg');
     }
 
