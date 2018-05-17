@@ -72,7 +72,7 @@
         const currThumbsWidth = this.imgIndex * this.thumbnailWidth
         const centerPos = Math.floor(galleryWidth / (this.thumbnailWidth * 2)) * this.thumbnailWidth
 
-        if (currThumbsWidth < centerPos || galleryWidth >= currThumbsWidth) {
+        if (currThumbsWidth < centerPos) {
           this.galleryXPos = 0
         } else if (currThumbsWidth > (this.images.length * this.thumbnailWidth) - galleryWidth + centerPos) {
           this.galleryXPos = -(this.images.length * this.thumbnailWidth - galleryWidth - 20)
