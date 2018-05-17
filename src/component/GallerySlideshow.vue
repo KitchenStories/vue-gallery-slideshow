@@ -1,12 +1,12 @@
 <template lang='pug'>
   transition(name='modal')
     .modal-slideshow(@click='close', v-if='imgIndex !== null')
-      .modal-slideshow__close(@click="close") x
-      button.modal-slideshow__prev(@click.stop="onPrev") &lt;
+      button.modal-slideshow__close(@click="close") &times;
+      button.modal-slideshow__prev(@click.stop="onPrev") &lsaquo;
       .modal-slideshow__container(@click.stop="onNext", v-if="images")
         .modal-slideshow__container__image
           img.modal-slideshow__container__image__img(@click.stop="onNext", :src="imageUrl")
-      button.modal-slideshow__next(@click.stop="onNext") &gt;
+      button.modal-slideshow__next(@click.stop="onNext") &rsaquo;
       .modal-slideshow__gallery(ref="gallery")
         .modal-slideshow__gallery__title(v-if="images") {{ imgIndex + 1 }} / {{ images.length }}
         .modal-slideshow__gallery__container(
@@ -145,9 +145,18 @@
     &__close {
       color: #fff;
       position: absolute;
-      top: 10px;
-      right: 10px;
-      pointer: cursor;
+      top: 0;
+      right: 0;
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      &:focus {
+        outline: 0;
+      }
     }
 
     &__prev,
@@ -171,12 +180,10 @@
 
     &__prev {
       left: 0;
-      //background-image: url('/images/arrow_white_left.svg');
     }
 
     &__next {
       right: 0;
-      //background-image: url('/images/arrow_white_right.svg');
     }
 
     &__container {
