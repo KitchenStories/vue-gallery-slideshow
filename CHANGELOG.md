@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - update position of thumbnails
+- main path in package.json
 
 ### Updated
 - rollup
