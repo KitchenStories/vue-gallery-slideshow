@@ -1,23 +1,23 @@
-<template lang='pug'>
-  transition(name='modal')
-    .modal-slideshow(@click='close', v-if='imgIndex !== null')
-      button.modal-slideshow__close(@click="close") &times;
-      button.modal-slideshow__prev(@click.stop="onPrev") &lsaquo;
-      .modal-slideshow__container(@click.stop="onNext", v-if="images")
-        .modal-slideshow__container__image
-          img.modal-slideshow__container__image__img(@click.stop="onNext", :src="imageUrl")
-      button.modal-slideshow__next(@click.stop="onNext") &rsaquo;
-      .modal-slideshow__gallery(ref="gallery")
-        .modal-slideshow__gallery__title(v-if="images") {{ imgIndex + 1 }} / {{ images.length }}
-        .modal-slideshow__gallery__container(
-        v-if="images",
-        :style="{ transform: 'translate(' + galleryXPos + 'px, 0)' }"
-        )
-          img.modal-slideshow__gallery__container__img(
-          v-for="(image, i) in images", :src="image",
-          @click.stop="onClickThumb(image, i)",
-          :class="{ 'modal-slideshow__gallery__container__img--active': i === imgIndex}"
-          )
+<template>
+  <transition name="modal">
+    <div class="modal-slideshow" @click="close" v-if="imgIndex !== null">
+      <button class="modal-slideshow__close" @click="close">&times;</button>
+      <button class="modal-slideshow__prev" @click.stop="onPrev">&lsaquo;</button>
+      <div class="modal-slideshow__container" @click.stop="onNext" v-if="images">
+        <div class="modal-slideshow__container__image"><img class="modal-slideshow__container__image__img"
+                                                            @click.stop="onNext" :src="imageUrl"/></div>
+      </div>
+      <button class="modal-slideshow__next" @click.stop="onNext">&rsaquo;</button>
+      <div class="modal-slideshow__gallery" ref="gallery">
+        <div class="modal-slideshow__gallery__title" v-if="images">{{ imgIndex + 1 }} / {{ images.length }}</div>
+        <div class="modal-slideshow__gallery__container" v-if="images"
+             :style="{ transform: 'translate(' + galleryXPos + 'px, 0)' }"><img
+          class="modal-slideshow__gallery__container__img" v-for="(image, i) in images" :src="image"
+          @click.stop="onClickThumb(image, i)"
+          :class="{ 'modal-slideshow__gallery__container__img--active': i === imgIndex}"/></div>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>

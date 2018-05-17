@@ -1,18 +1,18 @@
-import vue from 'rollup-plugin-vue';
-import babel from 'rollup-plugin-babel';
-import uglify from 'rollup-plugin-uglify';
+import VuePlugin from 'rollup-plugin-vue';
+import BabelPlugin from 'rollup-plugin-babel';
+import UglifyPlugin from 'rollup-plugin-uglify';
 
 export default {
-  input: 'src/index.js',
+  entry: 'src/index.js',
   plugins: [
-    vue({css: true}),
-    babel({
+    VuePlugin(),
+    BabelPlugin({
       babelrc: true,
       runtimeHelpers: true,
       externalHelpers: false,
       exclude: 'node_modules/**',
     }),
-    (process.env.NODE_ENV === 'production' && uglify())
+    (process.env.NODE_ENV === 'production' && UglifyPlugin())
   ],
   output: {
     file: process.env.NODE_ENV === 'production' ? 'dist/js/vue-gallery-slideshow.min.js' : 'dist/js/vue-gallery-slideshow.js',
