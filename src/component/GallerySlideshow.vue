@@ -100,7 +100,7 @@
 <style lang="scss">
   $black-alpha-80: rgba(0, 0, 0, 0.8);
   $black: #000;
-  $white: #fff
+  $white: #fff;
   $radius-medium: 8px;
   $radius-large: 12px;
 
@@ -110,11 +110,11 @@
         @content;
       }
     } @else if $breakpoint == medium {
-      @media (min-width: 30em) {
+      @media (min-width: 40em) {
         @content;
       }
     } @else if $breakpoint == large {
-      @media (min-width: 50em) {
+      @media (min-width: 80em) {
         @content;
       }
     }
@@ -142,18 +142,6 @@
     @include modal-mask();
     background-color: $black-alpha-80;
 
-    @include respond-to(small) {
-      background-color: blue;
-    }
-
-    @include respond-to(medium) {
-      background-color: greenyellow;
-    }
-
-    @include respond-to(large) {
-      background-color: yellow;
-    }
-
     &__close {
       color: #fff;
       position: absolute;
@@ -161,10 +149,11 @@
       right: 0;
       background-color: transparent;
       border: none;
-      font-size: 30px;
+      font-size: 25px;
       width: 50px;
       height: 50px;
       cursor: pointer;
+      z-index: 999;
 
       &:focus {
         outline: 0;
@@ -204,7 +193,6 @@
       overflow: hidden;
       max-width: 100vh;
       margin: auto;
-      top: 2rem;
       left: 0.5rem;
       right: 0.5rem;
 
@@ -220,7 +208,7 @@
       @include respond-to(medium) {
         max-width: 100vh;
         margin: auto;
-        top: 2rem;
+        top: 3rem;
         left: 0.5rem;
         right: 0.5rem;
       }
@@ -314,4 +302,11 @@
     }
   }
 
+  .modal-enter {
+    opacity: 0;
+  }
+
+  .modal-leave-active {
+    opacity: 0;
+  }
 </style>
