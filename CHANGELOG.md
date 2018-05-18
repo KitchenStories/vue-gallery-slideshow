@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] -2018-05-18
+### Fixed
+- open same picture after close not working
+
 ## [1.2.1] -2018-05-18
 ### Added
 - minimize package size

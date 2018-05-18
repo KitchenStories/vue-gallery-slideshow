@@ -42,6 +42,7 @@
     methods: {
       close() {
         this.imgIndex = null;
+        this.$emit("close");
       },
       onPrev() {
         if (this.imgIndex > 0) {
