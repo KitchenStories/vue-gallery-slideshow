@@ -13,7 +13,7 @@
         <div class="modal-slideshow__gallery__container" v-if="images"
              :style="{ transform: 'translate(' + galleryXPos + 'px, 0)' }"><img
           class="modal-slideshow__gallery__container__img" v-for="(image, i) in images" :src="image"
-          @click.stop="onClickThumb(image, i)"
+          @click.stop="onClickThumb(image, i)" :key="i"
           :class="{ 'modal-slideshow__gallery__container__img--active': i === imgIndex}"/></div>
       </div>
     </div>
@@ -22,68 +22,68 @@
 
 <script>
   export default {
-    props: ['images', 'index'],
+    props: ["images", "index"],
     mounted() {
-      window.addEventListener('keydown', e => {
+      window.addEventListener("keydown", e => {
         if (e.keyCode === 37) {
-          this.onPrev()
+          this.onPrev();
         }
 
         if (e.keyCode === 39) {
-          this.onNext()
+          this.onNext();
         }
-      })
+      });
     },
     watch: {
       index(val) {
-        this.imgIndex = val
+        this.imgIndex = val;
       }
     },
     methods: {
       close() {
-        this.imgIndex = null
+        this.imgIndex = null;
       },
       onPrev() {
         if (this.imgIndex > 0) {
-          this.imgIndex--
+          this.imgIndex--;
         } else {
-          this.imgIndex = this.images.length - 1
+          this.imgIndex = this.images.length - 1;
         }
-        this.updateThumbails()
+        this.updateThumbails();
       },
       onNext() {
         if (this.imgIndex < this.images.length - 1) {
-          this.imgIndex++
+          this.imgIndex++;
         } else {
-          this.imgIndex = 0
+          this.imgIndex = 0;
         }
-        this.updateThumbails()
+        this.updateThumbails();
       },
       onClickThumb(image, index) {
-        this.imgIndex = index
-        this.updateThumbails()
+        this.imgIndex = index;
+        this.updateThumbails();
       },
       updateThumbails() {
         if (!this.$refs.gallery) {
-          return
+          return;
         }
 
-        const galleryWidth = this.$refs.gallery.clientWidth
-        const currThumbsWidth = this.imgIndex * this.thumbnailWidth
-        const centerPos = Math.floor(galleryWidth / (this.thumbnailWidth * 2)) * this.thumbnailWidth
+        const galleryWidth = this.$refs.gallery.clientWidth;
+        const currThumbsWidth = this.imgIndex * this.thumbnailWidth;
+        const centerPos = Math.floor(galleryWidth / (this.thumbnailWidth * 2)) * this.thumbnailWidth;
 
         if (currThumbsWidth < centerPos) {
-          this.galleryXPos = 0
+          this.galleryXPos = 0;
         } else if (currThumbsWidth > (this.images.length * this.thumbnailWidth) - galleryWidth + centerPos) {
-          this.galleryXPos = -(this.images.length * this.thumbnailWidth - galleryWidth - 20)
+          this.galleryXPos = -(this.images.length * this.thumbnailWidth - galleryWidth - 20);
         } else {
-          this.galleryXPos = -(this.imgIndex * this.thumbnailWidth) + centerPos
+          this.galleryXPos = -(this.imgIndex * this.thumbnailWidth) + centerPos;
         }
       }
     },
     computed: {
       imageUrl() {
-        return this.images[this.imgIndex]
+        return this.images[this.imgIndex];
       },
     },
     data() {
@@ -92,29 +92,29 @@
         image: null,
         galleryXPos: 0,
         thumbnailWidth: 120
-      }
+      };
     }
-  }
+  };
 </script>
 
 <style lang="scss">
   $black-alpha-80: rgba(0, 0, 0, 0.8);
   $black: #000;
-  $white: #fff;
+  $white: #fff
   $radius-medium: 8px;
   $radius-large: 12px;
 
   @mixin respond-to($breakpoint) {
-    @if $breakpoint == "small" {
-      @media (min-width: 767px) {
+    @if $breakpoint == small {
+      @media (min-width: 0) {
         @content;
       }
-    } @else if $breakpoint == "medium" {
-      @media (min-width: 992px) {
+    } @else if $breakpoint == medium {
+      @media (min-width: 30em) {
         @content;
       }
-    } @else if $breakpoint == "large" {
-      @media (min-width: 1200px) {
+    } @else if $breakpoint == large {
+      @media (min-width: 50em) {
         @content;
       }
     }
@@ -141,6 +141,18 @@
   .modal-slideshow {
     @include modal-mask();
     background-color: $black-alpha-80;
+
+    @include respond-to(small) {
+      background-color: blue;
+    }
+
+    @include respond-to(medium) {
+      background-color: greenyellow;
+    }
+
+    @include respond-to(large) {
+      background-color: yellow;
+    }
 
     &__close {
       color: #fff;
@@ -189,14 +201,20 @@
     &__container {
       position: absolute;
       cursor: pointer;
-      margin: 0 auto;
       overflow: hidden;
+      max-width: 100vh;
+      margin: auto;
+      top: 2rem;
+      left: 0.5rem;
+      right: 0.5rem;
 
-      /*
       @include respond-to(small) {
         width: 100%;
+        max-width: 100%;
         top: 50%;
         margin-top: -150px;
+        left: 0;
+        right: 0;
       }
 
       @include respond-to(medium) {
@@ -206,20 +224,13 @@
         left: 0.5rem;
         right: 0.5rem;
       }
-      */
-
-      max-width: 100vh;
-      margin: auto;
-      top: 2rem;
-      left: 0.5rem;
-      right: 0.5rem;
 
       &__image {
         background-color: $black;
 
-        /*
         @include respond-to(small) {
           height: 274px;
+          border-radius: 0;
         }
 
         @include respond-to(medium) {
@@ -227,7 +238,6 @@
           border-radius: $radius-large;
           overflow: hidden;
         }
-        */
 
         height: 60vh;
         border-radius: $radius-large;
@@ -243,7 +253,6 @@
   }
 
   .modal-slideshow__gallery {
-    /*
     @include respond-to(small) {
       display: none;
     }
@@ -258,8 +267,8 @@
       white-space: nowrap;
       left: 0.5rem;
       right: 0.5rem;
+      display: block;
     }
-    */
 
     overflow-x: hidden;
     overflow-y: hidden;

@@ -7,7 +7,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "node_modules/.bin/eslint ./",
+    "lint": "./node_modules/.bin/eslint ./src/component/GallerySlideshow.vue",
     "build": "node_modules/.bin/rollup -c ./rollup.config.js && NODE_ENV=production node_modules/.bin/rollup -c ./rollup.config.js",
     "patch": "npm version patch",
     "minor": "npm version minor",
@@ -48,6 +48,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "eslint": "^4.6.1",
+    "eslint-plugin-vue": "^4.5.0",
     "rollup": "^0.59.1",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-sass": "^0.6.1",

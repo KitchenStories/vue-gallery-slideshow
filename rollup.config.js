@@ -3,7 +3,7 @@ import BabelPlugin from 'rollup-plugin-babel';
 import UglifyPlugin from 'rollup-plugin-uglify';
 
 export default {
-  entry: 'src/index.js',
+  input: 'src/index.js',
   plugins: [
     VuePlugin(),
     BabelPlugin({
