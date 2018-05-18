@@ -2,6 +2,7 @@
 .gitignore
 .npmignore
 .idea/
+.travis.yml
 doc/
 .git/
 _config.yml
@@ -9,3 +10,8 @@ _config.yml
 .codeclimate.yml
 examples/
 src/
+images/
+CHANGELOG.md
+rollup.config.js
+.eslintignore
+.eslintrc.js
