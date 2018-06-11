@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script type="text/javascript" src="../dist/js/vue-gallery-slideshow.js"></script>
-  <style>
-    body {
-      font-family: sans-serif;
-    }
-
-    .image {
-      width: 100px;
-      height: 100px;
-      background-size: contain;
-      cursor: pointer;
-      margin: 5px;
-      border-radius: 3px;
-    }
-  </style>
-</head>
-<body>
-<div id="app">
-  <img class="image" v-for="(image, i) in images" :src="image" @click="onClick(i)">
-  <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
-</div>
-<script>
-  new Vue({
-    el: '#app',
-    components: {
-      VueGallerySlideshow
-    },
-    methods: {
-      onClick(i) {
-        this.index = i;
+  <head>
+    <meta charset="utf-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../dist/js/vue-gallery-slideshow.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
       }
-    },
-    data: {
-      images: [
-        'https://placekitten.com/801/800',
-        'https://placekitten.com/802/800',
-        'https://placekitten.com/803/800',
-        'https://placekitten.com/804/800',
-        'https://placekitten.com/805/800',
-        'https://placekitten.com/806/800',
-        'https://placekitten.com/807/800',
-        'https://placekitten.com/808/800',
-        'https://placekitten.com/809/800',
-        'https://placekitten.com/810/800',
-      ],
-      index: null
-    }
-  })
-</script>
-</body>
+
+      .image {
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <img class="image" v-for="(image, i) in images" :src="image" @click="index = i">
+      <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        components: {
+          VueGallerySlideshow
+        },
+        data: {
+          images: [
+            'https://placekitten.com/801/800',
+            'https://placekitten.com/802/800',
+            'https://placekitten.com/803/800',
+            'https://placekitten.com/804/800',
+            'https://placekitten.com/805/800',
+            'https://placekitten.com/806/800',
+            'https://placekitten.com/807/800',
+            'https://placekitten.com/808/800',
+            'https://placekitten.com/809/800',
+            'https://placekitten.com/810/800'
+          ],
+          index: null
+        }
+      })
+    </script>
+  </body>
 </html>

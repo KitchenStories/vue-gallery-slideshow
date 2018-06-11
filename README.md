@@ -8,7 +8,7 @@
 ![](https://github.com/KitchenStories/vue-gallery-slideshow/blob/master/images/demo.gif)
 
 ## Live Demo
-[https://jsfiddle.net/headione/szk73x45/3/](https://jsfiddle.net/headione/szk73x45/3/)
+[https://jsfiddle.net/headione/szk73x45/3/](https://jsfiddle.net/headione/szk73x45)
 
 ## Installation
 
@@ -24,7 +24,7 @@ npm install vue-gallery-slideshow --save
 
 ```html
 <div id="app">
-  <img class="image" v-for="(image, i) in images" :src="image" @click="onClick(i)">
+  <img class="image" v-for="(image, i) in images" :src="image" @click="index = i">
   <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
 </div>
 ```
@@ -40,11 +40,6 @@ const app = new Vue({
   el: '#app',
   components: {
     VueGallerySlideshow
-  },
-  methods: {
-    onClick(i) {
-      this.index = i;
-    }
   },
   data: {
     images: [
