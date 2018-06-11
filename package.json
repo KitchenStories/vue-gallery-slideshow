@@ -1,11 +1,11 @@
 {
   "name": "vue-gallery-slideshow",
-  "version": "1.2.2",
-  "description": "Full responsive image gallery for VueJS.",
+  "version": "1.2.3",
+  "description": "Lightweight and responsive image gallery for Vue.js.",
   "main": "dist/js/vue-gallery-slideshow.js",
   "unpkg": "dist/js/vue-gallery-slideshow.min.js",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint ./src/component/GallerySlideshow.vue",
     "build": "node_modules/.bin/rollup -c ./rollup.config.js && NODE_ENV=production node_modules/.bin/rollup -c ./rollup.config.js",
@@ -40,21 +40,13 @@
   },
   "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "eslint": "^4.6.1",
+    "eslint": "^4.19.1",
     "eslint-plugin-vue": "^4.5.0",
-    "rollup": "^0.59.1",
-    "rollup-plugin-babel": "^3.0.4",
-    "rollup-plugin-sass": "^0.6.1",
-    "rollup-plugin-uglify": "^3.0.0",
-    "rollup-plugin-vue": "^4.1.4",
-    "vue-template-compiler": "^2.5.4"
+    "node-sass": "^4.9.0",
+    "rollup": "^0.60.2",
+    "rollup-plugin-terser": "^1.0.1",
+    "rollup-plugin-vue": "^4.2.0",
+    "vue-template-compiler": "^2.5.16"
   },
   "dependencies": {}
 }
