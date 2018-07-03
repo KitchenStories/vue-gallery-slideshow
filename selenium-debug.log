@@ -1,0 +1,101 @@
+13:11:35.088 INFO - Launching a standalone Selenium Server
+13:11:35.121 INFO - Java: "Oracle Corporation" 10.0.1+10
+13:11:35.121 INFO - OS: Mac OS X 10.13.5 x86_64
+13:11:35.133 INFO - v2.53.1, with Core v2.53.1. Built from revision a36b8b1
+13:11:35.189 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform MAC
+13:11:35.189 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform MAC
+13:11:35.189 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+13:11:35.189 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+13:11:35.191 INFO - Driver class not found: org.openqa.selenium.htmlunit.HtmlUnitDriver
+13:11:35.191 INFO - Driver provider org.openqa.selenium.htmlunit.HtmlUnitDriver is not registered
+13:11:35.240 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+13:11:35.240 INFO - Selenium Server is up and running
+13:11:35.425 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Gallery, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+13:11:35.436 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Gallery, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 2.40.565386 (45a059dc425e08165f9a10324bd1380cc13ca363) on port 25135
+Only local connections are allowed.
+13:11:36.623 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Gallery, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
+13:11:36.637 INFO - Executing: [get: http://localhost:8080/examples/gallery/])
+13:11:38.713 INFO - Done: [get: http://localhost:8080/examples/gallery/]
+13:11:38.719 INFO - Executing: [find elements: By.cssSelector: #app])
+13:11:38.748 INFO - Done: [find elements: By.cssSelector: #app]
+13:11:38.751 INFO - Executing: [is displayed: 0 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: #app]])
+13:11:38.770 INFO - Done: [is displayed: 0 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: #app]]
+13:11:38.776 INFO - Executing: [find elements: By.cssSelector: .modal-slideshow])
+13:11:38.790 INFO - Done: [find elements: By.cssSelector: .modal-slideshow]
+13:11:38.793 INFO - Executing: [find element: By.cssSelector: img:nth-child(1)])
+13:11:38.807 INFO - Done: [find element: By.cssSelector: img:nth-child(1)]
+13:11:38.811 INFO - Executing: [click: 1 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: img:nth-child(1)]])
+13:11:38.850 INFO - Done: [click: 1 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: img:nth-child(1)]]
+13:11:39.358 INFO - Executing: [find elements: By.cssSelector: .modal-slideshow])
+13:11:39.368 INFO - Done: [find elements: By.cssSelector: .modal-slideshow]
+13:11:39.372 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(1)])
+13:11:39.387 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(1)]
+13:11:39.390 INFO - Executing: [get element attribute: 3 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(1)], class])
+13:11:39.398 INFO - Done: [get element attribute: 3 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(1)], class]
+13:11:39.402 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(2)])
+13:11:39.415 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(2)]
+13:11:39.419 INFO - Executing: [get element attribute: 4 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(2)], class])
+13:11:39.427 INFO - Done: [get element attribute: 4 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(2)], class]
+13:11:39.431 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__title])
+13:11:39.446 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__title]
+13:11:39.449 INFO - Executing: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]])
+13:11:39.464 INFO - Done: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]]
+13:11:39.467 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__next])
+13:11:39.479 INFO - Done: [find element: By.cssSelector: .modal-slideshow__next]
+13:11:39.482 INFO - Executing: [click: 6 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__next]])
+13:11:39.516 INFO - Done: [click: 6 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__next]]
+13:11:40.025 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(2)])
+13:11:40.034 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(2)]
+13:11:40.037 INFO - Executing: [get element attribute: 4 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(2)], class])
+13:11:40.043 INFO - Done: [get element attribute: 4 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(2)], class]
+13:11:40.046 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__title])
+13:11:40.055 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__title]
+13:11:40.059 INFO - Executing: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]])
+13:11:40.068 INFO - Done: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]]
+13:11:40.071 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__container__image__img])
+13:11:40.084 INFO - Done: [find element: By.cssSelector: .modal-slideshow__container__image__img]
+13:11:40.086 INFO - Executing: [click: 7 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__container__image__img]])
+13:11:40.119 INFO - Done: [click: 7 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__container__image__img]]
+13:11:40.625 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(3)])
+13:11:40.640 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(3)]
+13:11:40.643 INFO - Executing: [get element attribute: 8 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(3)], class])
+13:11:40.650 INFO - Done: [get element attribute: 8 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(3)], class]
+13:11:40.654 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__title])
+13:11:40.662 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__title]
+13:11:40.665 INFO - Executing: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]])
+13:11:40.674 INFO - Done: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]]
+13:11:40.677 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__prev])
+13:11:40.691 INFO - Done: [find element: By.cssSelector: .modal-slideshow__prev]
+13:11:40.695 INFO - Executing: [click: 9 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__prev]])
+13:11:40.728 INFO - Done: [click: 9 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__prev]]
+13:11:41.233 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(2)])
+13:11:41.243 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(2)]
+13:11:41.246 INFO - Executing: [get element attribute: 4 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(2)], class])
+13:11:41.253 INFO - Done: [get element attribute: 4 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(2)], class]
+13:11:41.256 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__title])
+13:11:41.265 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__title]
+13:11:41.267 INFO - Executing: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]])
+13:11:41.276 INFO - Done: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]]
+13:11:41.280 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(4)])
+13:11:41.293 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(4)]
+13:11:41.296 INFO - Executing: [click: 10 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(4)]])
+13:11:41.328 INFO - Done: [click: 10 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(4)]]
+13:11:41.838 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(4)])
+13:11:41.848 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__container__img:nth-child(4)]
+13:11:41.851 INFO - Executing: [get element attribute: 10 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(4)], class])
+13:11:41.858 INFO - Done: [get element attribute: 10 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__container__img:nth-child(4)], class]
+13:11:41.861 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__gallery__title])
+13:11:41.870 INFO - Done: [find element: By.cssSelector: .modal-slideshow__gallery__title]
+13:11:41.872 INFO - Executing: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]])
+13:11:41.881 INFO - Done: [get text: 5 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__gallery__title]]
+13:11:41.884 INFO - Executing: [find element: By.cssSelector: .modal-slideshow__close])
+13:11:41.897 INFO - Done: [find element: By.cssSelector: .modal-slideshow__close]
+13:11:41.900 INFO - Executing: [click: 11 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__close]])
+13:11:41.932 INFO - Done: [click: 11 [[ChromeDriver: chrome on MAC (bd7048198c4debd8816e97c6d2ebd070)] -> css selector: .modal-slideshow__close]]
+13:11:42.442 INFO - Executing: [find elements: By.cssSelector: .modal-slideshow])
+13:11:42.452 INFO - Done: [find elements: By.cssSelector: .modal-slideshow]
+13:11:42.456 INFO - Executing: [delete session: 44fc3090-4acb-4989-ba62-5ec190d24b65])
+13:11:42.541 INFO - Done: [delete session: 44fc3090-4acb-4989-ba62-5ec190d24b65]

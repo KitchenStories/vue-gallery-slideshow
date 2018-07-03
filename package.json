@@ -6,7 +6,7 @@
   "unpkg": "dist/js/vue-gallery-slideshow.min.js",
   "scripts": {
     "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run build && node test/e2e/runner.js",
     "lint": "./node_modules/.bin/eslint ./src/component/GallerySlideshow.vue",
     "build": "node_modules/.bin/rollup -c ./rollup.config.js && NODE_ENV=production node_modules/.bin/rollup -c ./rollup.config.js",
     "patch": "npm version patch",
@@ -40,12 +40,20 @@
   },
   "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "chromedriver": "^2.30.1",
+    "cross-spawn": "^5.1.0",
+    "eslint": "^5.0.1",
     "eslint-plugin-vue": "^4.5.0",
+    "http-server": "^0.11.1",
+    "nightwatch": "^0.9.21",
+    "nightwatch-helpers": "^1.2.0",
     "node-sass": "^4.9.0",
-    "rollup": "^0.60.2",
+    "path": "^0.12.7",
+    "phantomjs-prebuilt": "^2.1.14",
+    "rollup": "^0.62.0",
     "rollup-plugin-terser": "^1.0.1",
-    "rollup-plugin-vue": "^4.2.0",
+    "rollup-plugin-vue": "^4.3.0",
+    "selenium-server": "^2.53.1",
     "vue-template-compiler": "^2.5.16"
   },
   "dependencies": {}
