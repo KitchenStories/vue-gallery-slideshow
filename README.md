@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/KitchenStories/vue-gallery-slideshow.svg?branch=master)](https://travis-ci.org/KitchenStories/vue-gallery-slideshow)
 
+![npm](https://img.shields.io/npm/dt/vue-gallery-slideshow.svg)
+
 # vue-gallery-slideshow
 
 Lightweight and responsive image gallery for Vue.js.
