@@ -10,6 +10,7 @@ _config.yml
 .codeclimate.yml
 examples/
 src/
+test/
 images/
 CHANGELOG.md
 rollup.config.js
