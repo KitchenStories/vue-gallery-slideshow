@@ -9,7 +9,7 @@ Lightweight and responsive image gallery for Vue.js.
 ![](https://github.com/KitchenStories/vue-gallery-slideshow/blob/master/images/demo.gif)
 
 ## Live Demo
-[https://jsfiddle.net/headione/szk73x45](https://jsfiddle.net/headione/szk73x45)
+[https://jsfiddle.net/headione/szk73x45/show/](https://jsfiddle.net/headione/szk73x45/show/)
 
 ## Installation
 
