@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.4] -2018-08-03
+### Fixed
+- build dist with babel
+
+### Updated
+- all packages
+
 ## [1.2.3] -2018-06-11
 ### Updated
 - all packages

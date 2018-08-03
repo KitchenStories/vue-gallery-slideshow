@@ -1,6 +1,6 @@
 {
   "name": "vue-gallery-slideshow",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Lightweight and responsive image gallery for Vue.js.",
   "main": "dist/js/vue-gallery-slideshow.js",
   "unpkg": "dist/js/vue-gallery-slideshow.min.js",
@@ -40,21 +40,41 @@
   },
   "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
   "devDependencies": {
-    "chromedriver": "^2.30.1",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chromedriver": "^2.41.0",
     "cross-spawn": "^5.1.0",
-    "eslint": "^5.0.1",
-    "eslint-plugin-vue": "^4.5.0",
+    "eslint": "^5.2.0",
+    "eslint-plugin-vue": "^4.7.1",
     "http-server": "^0.11.1",
     "nightwatch": "^0.9.21",
     "nightwatch-helpers": "^1.2.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.2",
     "path": "^0.12.7",
     "phantomjs-prebuilt": "^2.1.14",
     "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-terser": "^1.0.1",
-    "rollup-plugin-vue": "^4.3.0",
+    "rollup-plugin-vue": "^4.3.2",
     "selenium-server": "^2.53.1",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.17"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "Chrome >= 14",
+    "Safari >= 4",
+    "Firefox >= 4",
+    "Opera >= 10",
+    "Edge >= 41",
+    "not ie <= 7",
+    "iOS >= 6",
+    "ChromeAndroid >= 4",
+    "OperaMobile >= 12"
+  ]
 }
