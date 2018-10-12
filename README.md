@@ -16,7 +16,7 @@ Lightweight and responsive image gallery for Vue.js.
 #### CDN
 
 ```html
-<script src="https://unpkg.com/vue-gallery-slideshow@1.2.3/dist/js/vue-gallery-slideshow.min.js"></script>
+<script src="https://unpkg.com/vue-gallery-slideshow@1.2.4/dist/js/vue-gallery-slideshow.min.js"></script>
 ```
 
 #### NPM
