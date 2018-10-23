@@ -64,7 +64,9 @@
     "selenium-server": "^3.14.0",
     "vue-template-compiler": "^2.5.17"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue-video-player": "^5.0.2"
+  },
   "browserslist": [
     "> 1%",
     "Chrome >= 14",

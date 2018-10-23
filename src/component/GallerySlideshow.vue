@@ -4,8 +4,15 @@
       <button class="modal-slideshow__close" @click="close">&times;</button>
       <button class="modal-slideshow__prev" @click.stop="onPrev">&lsaquo;</button>
       <div class="modal-slideshow__container" @click.stop="onNext" v-if="images">
-        <div class="modal-slideshow__container__image"><img class="modal-slideshow__container__image__img"
-                                                            @click.stop="onNext" :src="imageUrl"/></div>
+        <div class="modal-slideshow__container__image">
+          <img v-show="isPlayingVideo" class="modal-slideshow__container__image__img" @click.stop="onNextOrVideo" :src="imageUrl"/>
+          <video-player class="vjs-custom-skin"
+                        ref="videoPlayer"
+                        :options="playerOptions"
+                        :playsinline="true"
+                        v-show="!isPlayingVideo">
+          </video-player>
+        </div>
       </div>
       <button class="modal-slideshow__next" @click.stop="onNext">&rsaquo;</button>
       <div class="modal-slideshow__gallery" ref="gallery">
@@ -21,8 +28,10 @@
 </template>
 
 <script>
+    import 'video.js/dist/video-js.css'
+    import { videoPlayer } from 'vue-video-player'
   export default {
-    props: ["images", "index"],
+    props: ["images", "index", "videos"],
     mounted() {
       window.addEventListener("keydown", e => {
         if (e.keyCode === 37) {
@@ -41,10 +50,12 @@
     },
     methods: {
       close() {
+        this.isPlayingVideo = 0;
         this.imgIndex = null;
         this.$emit("close");
       },
       onPrev() {
+          this.isPlayingVideo = 0;
         if (this.imgIndex > 0) {
           this.imgIndex--;
         } else {
@@ -53,6 +64,7 @@
         this.updateThumbails();
       },
       onNext() {
+          this.isPlayingVideo = 0;
         if (this.imgIndex < this.images.length - 1) {
           this.imgIndex++;
         } else {
@@ -60,7 +72,17 @@
         }
         this.updateThumbails();
       },
+      onNextOrVideo() {
+          if(this.videoUrl != null)
+          {
+            this.isPlayingVideo = 1;
+          }
+          else{
+             this.onNext()
+          }
+      },
       onClickThumb(image, index) {
+          this.isPlayingVideo = 0;
         this.imgIndex = index;
         this.updateThumbails();
       },
@@ -86,14 +108,33 @@
       imageUrl() {
         return this.images[this.imgIndex];
       },
+      videoUrl() {
+        return this.videos[this.imgIndex];
+      },
     },
     data() {
       return {
         imgIndex: this.index,
         image: null,
+        isPlayingVideo: 0,
         galleryXPos: 0,
-        thumbnailWidth: 120
+        thumbnailWidth: 120,
+        playerOptions: {
+            height: '360',
+            autoplay: true,
+            muted: true,
+            language: 'en',
+            playbackRates: [0.7, 1.0, 1.5, 2.0],
+            sources: [{
+                type: "video/mp4",
+                src: this.videoUrl,
+            }],
+            poster: this.imageUrl,
+        }
       };
+    },
+    components: {
+        videoPlayer
     }
   };
 </script>
