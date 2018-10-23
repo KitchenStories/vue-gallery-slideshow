@@ -73,7 +73,15 @@
         }
         this.updateThumbails();
       },
-      onNext() {
+      onNext(e) {
+          console.log('onNext');
+          if(this.isPlayingVideo = 1)
+          {
+              e.preventDefault();
+              //this.isPlayingVideo = 0;
+              return;
+          }
+
           this.isPlayingVideo = 0;
         if (this.imgIndex < this.images.length - 1) {
           this.imgIndex++;
@@ -83,6 +91,7 @@
         this.updateThumbails();
       },
       onNextOrVideo() {
+          console.log('onnextorvideo');
           if(this.videoUrl != null)
           {
             this.isPlayingVideo = 1;
