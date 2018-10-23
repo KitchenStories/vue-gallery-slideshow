@@ -10,6 +10,7 @@
                         ref="videoPlayer"
                         :options="playerOptions"
                         :playsinline="true"
+                        @click.stop='null'
                         v-show="isPlayingVideo">
           </video-player>
         </div>
@@ -126,7 +127,7 @@
         galleryXPos: 0,
         thumbnailWidth: 120,
         playerOptions: {
-            height: '360',
+            height: '100%',
             autoplay: true,
             muted: true,
             language: 'en',
