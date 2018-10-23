@@ -3,7 +3,7 @@
     <div class="modal-slideshow" @click="close" v-if="imgIndex !== null">
       <button class="modal-slideshow__close" @click="close">&times;</button>
       <button class="modal-slideshow__prev" @click.stop="onPrev">&lsaquo;</button>
-      <div class="modal-slideshow__container" @click.stop="onNext" v-if="images">
+      <div class="modal-slideshow__container" @click.stop="fakeOnNext" v-if="images">
         <div class="modal-slideshow__container__image">
           <img v-show="!isPlayingVideo" class="modal-slideshow__container__image__img" @click.stop="onNextOrVideo" :src="imageUrl"/>
           <video-player class="vjs-custom-skin"
@@ -73,15 +73,7 @@
         }
         this.updateThumbails();
       },
-      onNext(e) {
-          console.log('onNext');
-          if(this.isPlayingVideo = 1)
-          {
-              e.preventDefault();
-              //this.isPlayingVideo = 0;
-              return;
-          }
-
+      onNext() {
           this.isPlayingVideo = 0;
         if (this.imgIndex < this.images.length - 1) {
           this.imgIndex++;
@@ -90,8 +82,22 @@
         }
         this.updateThumbails();
       },
+      fakeOnNext(e) {
+          if(this.isPlayingVideo == 1)
+          {
+              e.preventDefault();
+          }
+          else{
+              this.isPlayingVideo = 0;
+              if (this.imgIndex < this.images.length - 1) {
+                  this.imgIndex++;
+              } else {
+                  this.imgIndex = 0;
+              }
+              this.updateThumbails();
+          }
+      },
       onNextOrVideo() {
-          console.log('onnextorvideo');
           if(this.videoUrl != null)
           {
             this.isPlayingVideo = 1;
