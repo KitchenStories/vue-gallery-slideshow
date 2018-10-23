@@ -46,6 +46,12 @@
     watch: {
       index(val) {
         this.imgIndex = val;
+      },
+      imageUrl(val){
+        this.playerOptions.poster = val;
+      },
+      videoUrl(val){
+          this.playerOptions.sources[0].src = val;
       }
     },
     methods: {
@@ -127,9 +133,9 @@
             playbackRates: [0.7, 1.0, 1.5, 2.0],
             sources: [{
                 type: "video/mp4",
-                src: this.videoUrl,
+                src: null,
             }],
-            poster: this.imageUrl,
+            poster: null,
         }
       };
     },
