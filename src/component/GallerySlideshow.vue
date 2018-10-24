@@ -45,6 +45,7 @@
         this.$emit("close");
       },
       onPrev() {
+        if(this.imgIndex === null) return;
         if (this.imgIndex > 0) {
           this.imgIndex--;
         } else {
@@ -53,6 +54,7 @@
         this.updateThumbails();
       },
       onNext() {
+        if(this.imgIndex === null) return;
         if (this.imgIndex < this.images.length - 1) {
           this.imgIndex++;
         } else {

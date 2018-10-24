@@ -4,6 +4,11 @@ module.exports = {
     .url('http://localhost:8080/examples/gallery/')
       .waitForElementVisible('#app', 1000)
       .assert.elementNotPresent('.modal-slideshow')
+      .waitFor(500)
+      .keys([browser.Keys.RIGHT_ARROW], () => {
+                browser.assert.elementNotPresent('.modal-slideshow')
+            })
+      .waitFor(500)
       .click('img:nth-child(1)')
       .waitFor(500)
       .assert.elementPresent('.modal-slideshow')
@@ -26,6 +31,10 @@ module.exports = {
       .waitFor(500)
       .assert.cssClassPresent('.modal-slideshow__gallery__container__img:nth-child(4)', 'modal-slideshow__gallery__container__img--active')
       .assert.containsText('.modal-slideshow__gallery__title', '4 / 10')
+      .waitFor(500)
+      .keys([browser.Keys.RIGHT_ARROW], () => {
+                browser.assert.containsText('.modal-slideshow__gallery__title', '5 / 10')
+            })
       .click('.modal-slideshow__close')
       .waitFor(500)
       .assert.elementNotPresent('.modal-slideshow')
