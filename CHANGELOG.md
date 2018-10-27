@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.5] -2018-10-27
+### Fixed
+- gallery opens on left and right keys
+
 ## [1.2.4] -2018-08-03
 ### Fixed
 - build dist with babel
