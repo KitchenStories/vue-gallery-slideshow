@@ -16,7 +16,7 @@ npm run-script build
 
 echo "Creating git tag v$VERSION..."
 
-git commit -m "v$VERSION"
+git commit -am "v$VERSION"
 git tag v$VERSION -f
 git push --tags -f
 
