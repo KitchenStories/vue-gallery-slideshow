@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] -2019-01-16
+### Fixed
+- Prevent scrolling if not needed
+- Hide arrows and gallery stripe if only one image is shown
+
 ## [1.2.5] -2018-10-27
 ### Fixed
 - gallery opens on left and right keys

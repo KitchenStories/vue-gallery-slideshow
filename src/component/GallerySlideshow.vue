@@ -2,13 +2,13 @@
   <transition name="modal">
     <div class="modal-slideshow" @click="close" v-if="imgIndex !== null">
       <button class="modal-slideshow__close" @click="close">&times;</button>
-      <button class="modal-slideshow__prev" @click.stop="onPrev">&lsaquo;</button>
+      <button class="modal-slideshow__prev" v-if="isMultiple" @click.stop="onPrev">&lsaquo;</button>
       <div class="modal-slideshow__container" @click.stop="onNext" v-if="images">
         <div class="modal-slideshow__container__image"><img class="modal-slideshow__container__image__img"
                                                             @click.stop="onNext" :src="imageUrl"/></div>
       </div>
-      <button class="modal-slideshow__next" @click.stop="onNext">&rsaquo;</button>
-      <div class="modal-slideshow__gallery" ref="gallery">
+      <button class="modal-slideshow__next" v-if="isMultiple" @click.stop="onNext">&rsaquo;</button>
+      <div class="modal-slideshow__gallery" v-if="isMultiple" ref="gallery">
         <div class="modal-slideshow__gallery__title" v-if="images">{{ imgIndex + 1 }} / {{ images.length }}</div>
         <div class="modal-slideshow__gallery__container" v-if="images"
              :style="{ transform: 'translate(' + galleryXPos + 'px, 0)' }"><img
@@ -73,7 +73,13 @@
 
         const galleryWidth = this.$refs.gallery.clientWidth;
         const currThumbsWidth = this.imgIndex * this.thumbnailWidth;
+        const maxThumbsWidth = this.images.length * this.thumbnailWidth;
         const centerPos = Math.floor(galleryWidth / (this.thumbnailWidth * 2)) * this.thumbnailWidth;
+
+        // Prevent scrolling of images if not needed
+        if (maxThumbsWidth < galleryWidth) {
+          return;
+        }
 
         if (currThumbsWidth < centerPos) {
           this.galleryXPos = 0;
@@ -88,6 +94,9 @@
       imageUrl() {
         return this.images[this.imgIndex];
       },
+      isMultiple () {
+        return this.images.length > 1
+      }
     },
     data() {
       return {
