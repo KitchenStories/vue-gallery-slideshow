@@ -95,7 +95,7 @@
         return this.images[this.imgIndex];
       },
       isMultiple () {
-        return this.images.length > 1
+        return this.images.length > 1;
       }
     },
     data() {
