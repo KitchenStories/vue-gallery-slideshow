@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.1] -2019-02-06
+### Fixed
+- images with landscape formats bigger than ratio 1:0.672 are not completely visible
+
 ## [1.3.0] -2019-01-16
 ### Fixed
 - Prevent scrolling if not needed
