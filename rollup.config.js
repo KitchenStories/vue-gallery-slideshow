@@ -12,10 +12,10 @@ export default {
       externalHelpers: false,
       exclude: 'node_modules/**',
     }),
-    (process.env.NODE_ENV === 'production' && terser())
+    (process.env.BUILD_MODE === 'minify' && terser())
   ],
   output: {
-    file: process.env.NODE_ENV === 'production' ? 'dist/js/vue-gallery-slideshow.min.js' : 'dist/js/vue-gallery-slideshow.js',
+    file: process.env.BUILD_MODE === 'minify' ? 'dist/js/vue-gallery-slideshow.min.js' : 'dist/js/vue-gallery-slideshow.js',
     format: 'umd',
     name: 'VueGallerySlideshow',
   }

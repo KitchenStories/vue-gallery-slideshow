@@ -26,6 +26,14 @@
   //
   //
   //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
 
   var script = {
     props: ["images", "index"],
@@ -245,78 +253,30 @@
   /* script */
   var __vue_script__ = script;
   // For security concerns, we use only base name in production mode. See https://github.com/vuejs/rollup-plugin-vue/issues/258
-  script.__file = "/Users/norman/Projects/_kitchenstories/vue-gallery-slideshow/src/component/GallerySlideshow.vue";
+  script.__file = "GallerySlideshow.vue";
 
   /* template */
   var __vue_render__ = function __vue_render__() {
-    var _vm = this;
-    var _h = _vm.$createElement;
-    var _c = _vm._self._c || _h;
-    return _c("transition", { attrs: { name: "modal" } }, [_vm.imgIndex !== null ? _c("div", { staticClass: "modal-slideshow", on: { click: _vm.close } }, [_c("button", {
-      staticClass: "modal-slideshow__close",
-      on: { click: _vm.close }
-    }, [_vm._v("×")]), _vm._v(" "), _vm.isMultiple ? _c("button", {
-      staticClass: "modal-slideshow__prev",
-      on: {
-        click: function click($event) {
-          $event.stopPropagation();
-          return _vm.onPrev($event);
-        }
-      }
-    }, [_vm._v("‹")]) : _vm._e(), _vm._v(" "), _vm.images ? _c("div", {
-      staticClass: "modal-slideshow__container",
-      on: {
-        click: function click($event) {
-          $event.stopPropagation();
-          return _vm.onNext($event);
-        }
-      }
-    }, [_c("div", { staticClass: "modal-slideshow__container__image" }, [_c("img", {
-      staticClass: "modal-slideshow__container__image__img",
-      attrs: { src: _vm.imageUrl },
-      on: {
-        click: function click($event) {
-          $event.stopPropagation();
-          return _vm.onNext($event);
-        }
-      }
-    })])]) : _vm._e(), _vm._v(" "), _vm.isMultiple ? _c("button", {
-      staticClass: "modal-slideshow__next",
-      on: {
-        click: function click($event) {
-          $event.stopPropagation();
-          return _vm.onNext($event);
-        }
-      }
-    }, [_vm._v("›")]) : _vm._e(), _vm._v(" "), _vm.isMultiple ? _c("div", { ref: "gallery", staticClass: "modal-slideshow__gallery" }, [_vm.images ? _c("div", { staticClass: "modal-slideshow__gallery__title" }, [_vm._v(_vm._s(_vm.imgIndex + 1) + " / " + _vm._s(_vm.images.length))]) : _vm._e(), _vm._v(" "), _vm.images ? _c("div", {
-      staticClass: "modal-slideshow__gallery__container",
-      style: {
-        transform: "translate(" + _vm.galleryXPos + "px, 0)"
-      }
-    }, _vm._l(_vm.images, function (image, i) {
-      return _c("img", {
-        key: i,
-        staticClass: "modal-slideshow__gallery__container__img",
-        class: {
-          "modal-slideshow__gallery__container__img--active": i === _vm.imgIndex
-        },
-        attrs: { src: image },
-        on: {
-          click: function click($event) {
-            $event.stopPropagation();
-            _vm.onClickThumb(image, i);
-          }
-        }
-      });
+    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('transition', { attrs: { "name": "modal" } }, [_vm.imgIndex !== null ? _c('div', { staticClass: "vgs", on: { "click": _vm.close } }, [_c('button', { staticClass: "vgs__close", on: { "click": _vm.close } }, [_vm._v("×")]), _vm._v(" "), _vm.isMultiple ? _c('button', { staticClass: "vgs__prev", on: { "click": function click($event) {
+          $event.stopPropagation();return _vm.onPrev($event);
+        } } }, [_vm._v("‹")]) : _vm._e(), _vm._v(" "), _vm.images ? _c('div', { staticClass: "vgs__container", on: { "click": function click($event) {
+          $event.stopPropagation();return _vm.onNext($event);
+        } } }, [_c('img', { staticClass: "vgs__container__img", attrs: { "src": _vm.imageUrl }, on: { "click": function click($event) {
+          $event.stopPropagation();return _vm.onNext($event);
+        } } })]) : _vm._e(), _vm._v(" "), _vm.isMultiple ? _c('button', { staticClass: "vgs__next", on: { "click": function click($event) {
+          $event.stopPropagation();return _vm.onNext($event);
+        } } }, [_vm._v("›")]) : _vm._e(), _vm._v(" "), _vm.isMultiple ? _c('div', { ref: "gallery", staticClass: "vgs__gallery" }, [_vm.images ? _c('div', { staticClass: "vgs__gallery__title" }, [_vm._v(_vm._s(_vm.imgIndex + 1) + " / " + _vm._s(_vm.images.length))]) : _vm._e(), _vm._v(" "), _vm.images ? _c('div', { staticClass: "vgs__gallery__container", style: { transform: 'translate(' + _vm.galleryXPos + 'px, 0)' } }, _vm._l(_vm.images, function (image, i) {
+      return _c('img', { key: i, staticClass: "vgs__gallery__container__img", class: { 'vgs__gallery__container__img--active': i === _vm.imgIndex }, attrs: { "src": image }, on: { "click": function click($event) {
+            $event.stopPropagation();_vm.onClickThumb(image, i);
+          } } });
     }), 0) : _vm._e()]) : _vm._e()]) : _vm._e()]);
   };
   var __vue_staticRenderFns__ = [];
-  __vue_render__._withStripped = true;
 
   /* style */
   var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
     if (!inject) return;
-    inject("data-v-4aa19392_0", { source: ".modal-slideshow {\n  transition: opacity 0.2s ease;\n  position: fixed;\n  z-index: 9998;\n  top: 0;\n  left: 0;\n  width: 100%;\n  min-height: 100%;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.8);\n  display: table;\n  background-color: rgba(0, 0, 0, 0.8);\n}\n.modal-slideshow__close {\n    color: #fff;\n    position: absolute;\n    top: 0;\n    right: 0;\n    background-color: transparent;\n    border: none;\n    font-size: 25px;\n    width: 50px;\n    height: 50px;\n    cursor: pointer;\n    z-index: 999;\n}\n.modal-slideshow__close:focus {\n      outline: 0;\n}\n.modal-slideshow__prev, .modal-slideshow__next {\n    position: absolute;\n    top: 50%;\n    margin-top: -25px;\n    width: 50px;\n    height: 50px;\n    z-index: 999;\n    cursor: pointer;\n    font-size: 40px;\n    color: #fff;\n    background-color: transparent;\n    border: none;\n}\n.modal-slideshow__prev:focus, .modal-slideshow__next:focus {\n      outline: 0;\n}\n.modal-slideshow__prev {\n    left: 0;\n}\n.modal-slideshow__next {\n    right: 0;\n}\n.modal-slideshow__container {\n    position: absolute;\n    cursor: pointer;\n    overflow: hidden;\n    max-width: 100vh;\n    margin: auto;\n    left: 0.5rem;\n    right: 0.5rem;\n}\n@media (min-width: 0) {\n.modal-slideshow__container {\n        width: 100%;\n        max-width: 100%;\n        top: 50%;\n        margin-top: -150px;\n        left: 0;\n        right: 0;\n}\n}\n@media (min-width: 40em) {\n.modal-slideshow__container {\n        max-width: 100vh;\n        margin: auto;\n        top: 3rem;\n        left: 0.5rem;\n        right: 0.5rem;\n}\n}\n.modal-slideshow__container__image {\n      background-color: #000;\n      height: 60vh;\n      border-radius: 12px;\n      overflow: hidden;\n}\n@media (min-width: 0) {\n.modal-slideshow__container__image {\n          height: 274px;\n          border-radius: 0;\n}\n}\n@media (min-width: 40em) {\n.modal-slideshow__container__image {\n          height: 60vh;\n          border-radius: 12px;\n          overflow: hidden;\n}\n}\n.modal-slideshow__container__image__img {\n        display: block;\n        margin: 0 auto;\n        height: 100%;\n}\n.modal-slideshow__gallery {\n  overflow-x: hidden;\n  overflow-y: hidden;\n  position: absolute;\n  bottom: 10px;\n  margin: auto;\n  max-width: 100vh;\n  white-space: nowrap;\n  left: 0.5rem;\n  right: 0.5rem;\n}\n@media (min-width: 0) {\n.modal-slideshow__gallery {\n      display: none;\n}\n}\n@media (min-width: 40em) {\n.modal-slideshow__gallery {\n      overflow-x: hidden;\n      overflow-y: hidden;\n      position: absolute;\n      bottom: 10px;\n      margin: auto;\n      max-width: 100vh;\n      white-space: nowrap;\n      left: 0.5rem;\n      right: 0.5rem;\n      display: block;\n}\n}\n.modal-slideshow__gallery__title {\n    color: #fff;\n    margin-bottom: 0.5rem;\n}\n.modal-slideshow__gallery__container {\n    overflow: visible;\n    display: block;\n    height: 100px;\n    white-space: nowrap;\n    transition: all 200ms ease-in-out;\n    width: 100%;\n}\n.modal-slideshow__gallery__container__img {\n      width: 100px;\n      height: 100px;\n      object-fit: cover;\n      display: inline-block;\n      float: none;\n      margin-right: 20px;\n      cursor: pointer;\n      opacity: 0.6;\n      border-radius: 8px;\n}\n.modal-slideshow__gallery__container__img--active {\n      width: 100px;\n      display: inline-block;\n      float: none;\n      opacity: 1;\n}\n.modal-enter {\n  opacity: 0;\n}\n.modal-leave-active {\n  opacity: 0;\n}\n\n/*# sourceMappingURL=GallerySlideshow.vue.map */", map: { "version": 3, "sources": ["/Users/norman/Projects/_kitchenstories/vue-gallery-slideshow/src/component/GallerySlideshow.vue", "GallerySlideshow.vue"], "names": [], "mappings": "AAwJA;EAjBA,6BAAA;EACA,eAAA;EACA,aAAA;EAMA,MAAA;EACA,OAAA;EACA,WAAA;EACA,gBAAA;EACA,aAAA;EACA,oCApCA;EAqCA,cAAA;EAKA,oCA1CA;AAAA;AA4CA;IACA,WAAA;IACA,kBAAA;IACA,MAAA;IACA,QAAA;IACA,6BAAA;IACA,YAAA;IACA,eAAA;IACA,WAAA;IACA,YAAA;IACA,eAAA;IACA,YAAA;AAAA;AAXA;MAcA,UAAA;AAAA;AAIA;IAEA,kBAAA;IACA,QAAA;IACA,iBAAA;IACA,WAAA;IACA,YAAA;IACA,YAAA;IACA,eAAA;IACA,eAAA;IACA,WAAA;IACA,6BAAA;IACA,YAAA;AAAA;AAZA;MAeA,UAAA;AAAA;AAIA;IACA,OAAA;AAAA;AAGA;IACA,QAAA;AAAA;AAGA;IACA,kBAAA;IACA,eAAA;IACA,gBAAA;IACA,gBAAA;IACA,YAAA;IACA,YAAA;IACA,aAAA;AAAA;AAxFA;AAiFA;QAUA,WAAA;QACA,eAAA;QACA,QAAA;QACA,kBAAA;QACA,OAAA;QACA,QAAA;AAAA;AAmCA;AA/HA;AA6EA;QAmBA,gBAAA;QACA,YAAA;QACA,SAAA;QACA,YAAA;QACA,aAAA;AAAA;AA2BA;AAxBA;MACA,sBAnHA;MAgIA,YAAA;MACA,mBA9HA;MA+HA,gBAAA;AAAA;AA3HA;AA2GA;UAIA,aAAA;UACA,gBAAA;AAAA;AAkBA;AA9HA;AAuGA;UASA,YAAA;UACA,mBAzHA;UA0HA,gBAAA;AAAA;AAYA;AALA;QACA,cAAA;QACA,cAAA;QACA,YAAA;AAAA;AAMA;EAkBA,kBAAA;EACA,kBAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;AAAA;AAhKA;AAsIA;MAEA,aAAA;AAAA;AA0DA;AA9LA;AAkIA;MAMA,kBAAA;MACA,kBAAA;MACA,kBAAA;MACA,YAAA;MACA,YAAA;MACA,gBAAA;MACA,mBAAA;MACA,YAAA;MACA,aAAA;MACA,cAAA;AAAA;AA6CA;AAhCA;IACA,WAzKA;IA0KA,qBAAA;AAAA;AAGA;IACA,iBAAA;IACA,cAAA;IACA,aAAA;IACA,mBAAA;IACA,iCAAA;IACA,WAAA;AAAA;AAEA;MACA,YAAA;MACA,aAAA;MACA,iBAAA;MACA,qBAAA;MACA,WAAA;MACA,kBAAA;MACA,eAAA;MACA,YAAA;MACA,kBA7LA;AAAA;AAgMA;MACA,YAAA;MACA,qBAAA;MACA,WAAA;MACA,UAAA;AAAA;AAKA;EACA,UAAA;AAAA;AAGA;EACA,UAAA;AAAA;;AClLA,+CAA+C", "file": "GallerySlideshow.vue", "sourcesContent": [null, ".modal-slideshow {\n  transition: opacity 0.2s ease;\n  position: fixed;\n  z-index: 9998;\n  top: 0;\n  left: 0;\n  width: 100%;\n  min-height: 100%;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.8);\n  display: table;\n  background-color: rgba(0, 0, 0, 0.8); }\n  .modal-slideshow__close {\n    color: #fff;\n    position: absolute;\n    top: 0;\n    right: 0;\n    background-color: transparent;\n    border: none;\n    font-size: 25px;\n    width: 50px;\n    height: 50px;\n    cursor: pointer;\n    z-index: 999; }\n    .modal-slideshow__close:focus {\n      outline: 0; }\n  .modal-slideshow__prev, .modal-slideshow__next {\n    position: absolute;\n    top: 50%;\n    margin-top: -25px;\n    width: 50px;\n    height: 50px;\n    z-index: 999;\n    cursor: pointer;\n    font-size: 40px;\n    color: #fff;\n    background-color: transparent;\n    border: none; }\n    .modal-slideshow__prev:focus, .modal-slideshow__next:focus {\n      outline: 0; }\n  .modal-slideshow__prev {\n    left: 0; }\n  .modal-slideshow__next {\n    right: 0; }\n  .modal-slideshow__container {\n    position: absolute;\n    cursor: pointer;\n    overflow: hidden;\n    max-width: 100vh;\n    margin: auto;\n    left: 0.5rem;\n    right: 0.5rem; }\n    @media (min-width: 0) {\n      .modal-slideshow__container {\n        width: 100%;\n        max-width: 100%;\n        top: 50%;\n        margin-top: -150px;\n        left: 0;\n        right: 0; } }\n    @media (min-width: 40em) {\n      .modal-slideshow__container {\n        max-width: 100vh;\n        margin: auto;\n        top: 3rem;\n        left: 0.5rem;\n        right: 0.5rem; } }\n    .modal-slideshow__container__image {\n      background-color: #000;\n      height: 60vh;\n      border-radius: 12px;\n      overflow: hidden; }\n      @media (min-width: 0) {\n        .modal-slideshow__container__image {\n          height: 274px;\n          border-radius: 0; } }\n      @media (min-width: 40em) {\n        .modal-slideshow__container__image {\n          height: 60vh;\n          border-radius: 12px;\n          overflow: hidden; } }\n      .modal-slideshow__container__image__img {\n        display: block;\n        margin: 0 auto;\n        height: 100%; }\n\n.modal-slideshow__gallery {\n  overflow-x: hidden;\n  overflow-y: hidden;\n  position: absolute;\n  bottom: 10px;\n  margin: auto;\n  max-width: 100vh;\n  white-space: nowrap;\n  left: 0.5rem;\n  right: 0.5rem; }\n  @media (min-width: 0) {\n    .modal-slideshow__gallery {\n      display: none; } }\n  @media (min-width: 40em) {\n    .modal-slideshow__gallery {\n      overflow-x: hidden;\n      overflow-y: hidden;\n      position: absolute;\n      bottom: 10px;\n      margin: auto;\n      max-width: 100vh;\n      white-space: nowrap;\n      left: 0.5rem;\n      right: 0.5rem;\n      display: block; } }\n  .modal-slideshow__gallery__title {\n    color: #fff;\n    margin-bottom: 0.5rem; }\n  .modal-slideshow__gallery__container {\n    overflow: visible;\n    display: block;\n    height: 100px;\n    white-space: nowrap;\n    transition: all 200ms ease-in-out;\n    width: 100%; }\n    .modal-slideshow__gallery__container__img {\n      width: 100px;\n      height: 100px;\n      object-fit: cover;\n      display: inline-block;\n      float: none;\n      margin-right: 20px;\n      cursor: pointer;\n      opacity: 0.6;\n      border-radius: 8px; }\n    .modal-slideshow__gallery__container__img--active {\n      width: 100px;\n      display: inline-block;\n      float: none;\n      opacity: 1; }\n\n.modal-enter {\n  opacity: 0; }\n\n.modal-leave-active {\n  opacity: 0; }\n\n/*# sourceMappingURL=GallerySlideshow.vue.map */"] }, media: undefined });
+    inject("data-v-3aec641d_0", { source: ".vgs{transition:opacity .2s ease;position:fixed;z-index:9998;top:0;left:0;width:100%;min-height:100%;height:100vh;background-color:rgba(0,0,0,.8);display:table}.vgs__close{color:#fff;position:absolute;top:0;right:0;background-color:transparent;border:none;font-size:25px;width:50px;height:50px;cursor:pointer;z-index:999}.vgs__close:focus{outline:0}.vgs__next,.vgs__prev{position:absolute;top:50%;margin-top:-25px;width:50px;height:50px;z-index:999;cursor:pointer;font-size:40px;color:#fff;background-color:transparent;border:none}.vgs__next:focus,.vgs__prev:focus{outline:0}.vgs__prev{left:0}.vgs__next{right:0}.vgs__container{position:absolute;overflow:hidden;cursor:pointer;overflow:hidden;max-width:100vh;margin:.5rem auto 0;left:.5rem;right:.5rem;height:60vh;border-radius:12px;background-color:#000}@media (max-width:767px){.vgs__container{width:100%;max-width:100%;top:50%;margin-top:-140px;left:0;right:0;border-radius:0;height:280px}}.vgs__container__img{width:100%;height:100%;object-fit:contain}.vgs__gallery{overflow-x:hidden;overflow-y:hidden;position:absolute;bottom:10px;margin:auto;max-width:100vh;white-space:nowrap;left:.5rem;right:.5rem}@media (max-width:767px){.vgs__gallery{display:none}}.vgs__gallery__title{color:#fff;margin-bottom:.5rem}.vgs__gallery__container{overflow:visible;display:block;height:100px;white-space:nowrap;transition:all .2s ease-in-out;width:100%}.vgs__gallery__container__img{width:100px;height:100px;object-fit:cover;display:inline-block;float:none;margin-right:20px;cursor:pointer;opacity:.6;border-radius:8px}.vgs__gallery__container__img--active{width:100px;display:inline-block;float:none;opacity:1}.modal-enter{opacity:0}.modal-leave-active{opacity:0}", map: undefined, media: undefined });
   };
   /* scoped */
   var __vue_scope_id__ = undefined;
