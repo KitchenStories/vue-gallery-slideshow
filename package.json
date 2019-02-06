@@ -53,9 +53,9 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
-    "chromedriver": "^2.45.0",
+    "chromedriver": "^2.46.0",
     "cross-spawn": "^6.0.5",
-    "eslint": "^5.12.0",
+    "eslint": "^5.13.0",
     "eslint-plugin-vue": "^4.7.1",
     "http-server": "^0.11.1",
     "nightwatch": "^0.9.21",
@@ -66,9 +66,9 @@
     "rollup": "^0.63.5",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-terser": "^1.0.1",
-    "rollup-plugin-vue": "^4.6.1",
+    "rollup-plugin-vue": "^4.7.1",
     "selenium-server": "^3.141.59",
-    "vue-template-compiler": "^2.5.22"
+    "vue-template-compiler": "^2.6.2"
   },
   "dependencies": {},
   "browserslist": [
