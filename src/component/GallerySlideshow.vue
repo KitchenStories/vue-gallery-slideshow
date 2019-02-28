@@ -1,12 +1,12 @@
 <template>
   <transition name="modal">
     <div class="vgs" @click="close" v-if="imgIndex !== null">
-      <button class="vgs__close" @click="close">&times;</button>
-      <button class="vgs__prev" v-if="isMultiple" @click.stop="onPrev">&lsaquo;</button>
+      <button type="button" class="vgs__close" @click="close">&times;</button>
+      <button type="button" class="vgs__prev" v-if="isMultiple" @click.stop="onPrev">&lsaquo;</button>
       <div class="vgs__container" @click.stop="onNext" v-if="images">
         <img class="vgs__container__img" @click.stop="onNext" :src="imageUrl">
       </div>
-      <button class="vgs__next" v-if="isMultiple" @click.stop="onNext">&rsaquo;</button>
+      <button type="button" class="vgs__next" v-if="isMultiple" @click.stop="onNext">&rsaquo;</button>
       <div class="vgs__gallery" v-if="isMultiple" ref="gallery">
         <div class="vgs__gallery__title" v-if="images">{{ imgIndex + 1 }} / {{ images.length }}</div>
         <div
