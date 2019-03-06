@@ -46,6 +46,7 @@
   },
   "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
   "devDependencies": {
+    "rollup-plugin-commonjs": "^9.2.1",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
@@ -70,7 +71,6 @@
     "selenium-server": "^3.141.59",
     "vue-template-compiler": "^2.5.22"
   },
-  "dependencies": {},
   "browserslist": [
     "> 1%",
     "Chrome >= 14",
