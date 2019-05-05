@@ -33,6 +33,10 @@ export default {
   props: ["images", "index"],
   mounted() {
     window.addEventListener("keydown", e => {
+       if (e.keyCode === 27) {
+        this.close();
+      }
+
       if (e.keyCode === 37) {
         this.onPrev();
       }
