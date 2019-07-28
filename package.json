@@ -12,7 +12,7 @@
   "scripts": {
     "prepare": "npm run build",
     "test": "npm run build && node test/e2e/runner.js",
-    "lint": "./node_modules/.bin/eslint ./src/component/GallerySlideshow.vue",
+    "lint": "eslint --ext .js,.vue src",
     "build": "NODE_ENV=production node_modules/.bin/rollup -c ./rollup.config.js && NODE_ENV=production BUILD_MODE=minify node_modules/.bin/rollup -c ./rollup.config.js",
     "patch": "npm version patch",
     "minor": "npm version minor",

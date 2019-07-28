@@ -1,6 +1,6 @@
 module.exports = {
   "extends": [
-    "plugin:vue/essential"
+    "plugin:vue/recommended"
   ],
   "rules": {
     "semi": ["error", "always"],
