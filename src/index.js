@@ -1,3 +1,3 @@
-import GallerySlideshow from './component/GallerySlideshow.vue';
+import GallerySlideshow from "./component/GallerySlideshow.vue";
 
 export default GallerySlideshow;
