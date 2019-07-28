@@ -54,7 +54,7 @@
     "eslint": "^6.1.0",
     "eslint-plugin-vue": "^5.2.3",
     "http-server": "^0.11.1",
-    "nightwatch": "^1.1.13",
+    "nightwatch": "^0.9.21",
     "nightwatch-helpers": "^1.2.0",
     "node-sass": "^4.12.0",
     "path": "^0.12.7",
@@ -65,7 +65,8 @@
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-vue": "^5.0.1",
     "selenium-server": "^3.141.59",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webdriver-manager": "^12.1.5"
   },
   "browserslist": [
     "> 1%",

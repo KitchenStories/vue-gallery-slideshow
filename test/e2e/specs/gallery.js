@@ -6,8 +6,8 @@ module.exports = {
       .assert.elementNotPresent('.vgs')
       .waitFor(500)
       .keys([browser.Keys.RIGHT_ARROW], () => {
-                browser.assert.elementNotPresent('.vgs')
-            })
+        browser.assert.elementNotPresent('.vgs')
+      })
       .waitFor(500)
       .click('img:nth-child(1)')
       .waitFor(500)
@@ -33,8 +33,8 @@ module.exports = {
       .assert.containsText('.vgs__gallery__title', '4 / 10')
       .waitFor(500)
       .keys([browser.Keys.RIGHT_ARROW], () => {
-                browser.assert.containsText('.vgs__gallery__title', '5 / 10')
-            })
+        browser.assert.containsText('.vgs__gallery__title', '5 / 10')
+      })
       .click('.vgs__close')
       .waitFor(500)
       .assert.elementNotPresent('.vgs')
