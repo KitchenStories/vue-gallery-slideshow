@@ -5,3 +5,4 @@ node_modules
 npm-debug.log
 test/e2e/reports
 test/e2e/screenshots
+selenium-server.log
