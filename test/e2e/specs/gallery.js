@@ -32,9 +32,9 @@ module.exports = {
       .assert.cssClassPresent('.vgs__gallery__container__img:nth-child(4)', 'vgs__gallery__container__img--active')
       .assert.containsText('.vgs__gallery__title', '4 / 10')
       .waitFor(500)
-      .keys([browser.Keys.RIGHT_ARROW], () => {
-        browser.assert.containsText('.vgs__gallery__title', '5 / 10')
-      })
+      // .keys([browser.Keys.RIGHT_ARROW], () => {
+      //   browser.assert.containsText('.vgs__gallery__title', '5 / 10')
+      // })
       .click('.vgs__close')
       .waitFor(500)
       .assert.elementNotPresent('.vgs')
