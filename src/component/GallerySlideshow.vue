@@ -107,10 +107,10 @@ export default {
     window.addEventListener("keydown", e => {
       if (e.keyCode === 37) {
         this.onPrev();
-      }
-
-      if (e.keyCode === 39) {
+      } else if (e.keyCode === 39) {
         this.onNext();
+      } else if (e.keyCode === 27) {
+        this.close();
       }
     });
   },

@@ -39,5 +39,19 @@ module.exports = {
       .waitFor(500)
       .assert.elementNotPresent('.vgs')
       .end()
-  }
+  },
+  // TODO: Fix key events
+  // 'gallery closes with esc': function (browser) {
+  //   browser
+  //   .url('http://localhost:8080/examples/gallery/')
+  //     .waitForElementVisible('#app', 1000)
+  //     .waitFor(500)
+  //     .click('img:nth-child(1)')
+  //     .waitFor(500)
+  //     .assert.elementPresent('.vgs')
+  //     .keys(browser.Keys.ESC)
+  //     .waitFor(500)
+  //     .assert.elementNotPresent('.vgs')
+  //     .end()
+  // }
 }
