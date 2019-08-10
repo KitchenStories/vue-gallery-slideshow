@@ -1,26 +1,67 @@
 <template>
   <transition name="modal">
-    <div class="vgs" @click="close" v-if="imgIndex !== null">
-      <button type="button" class="vgs__close" @click="close">&times;</button>
-      <button type="button" class="vgs__prev" v-if="isMultiple" @click.stop="onPrev">&lsaquo;</button>
-      <div class="vgs__container" @click.stop="onNext" v-if="images">
-        <img class="vgs__container__img" @click.stop="onNext" :src="imageUrl">
+    <div
+      v-if="imgIndex !== null"
+      class="vgs"
+      @click="close"
+    >
+      <button
+        type="button"
+        class="vgs__close"
+        @click="close"
+      >
+        &times;
+      </button>
+      <button
+        v-if="isMultiple"
+        type="button"
+        class="vgs__prev"
+        @click.stop="onPrev"
+      >
+        &lsaquo;
+      </button>
+      <div
+        v-if="images"
+        class="vgs__container"
+        @click.stop="onNext"
+      >
+        <img
+          class="vgs__container__img"
+          :src="imageUrl"
+          @click.stop="onNext"
+        >
       </div>
-      <button type="button" class="vgs__next" v-if="isMultiple" @click.stop="onNext">&rsaquo;</button>
-      <div class="vgs__gallery" v-if="isMultiple" ref="gallery">
-        <div class="vgs__gallery__title" v-if="images">{{ imgIndex + 1 }} / {{ images.length }}</div>
+      <button
+        v-if="isMultiple"
+        type="button"
+        class="vgs__next"
+        @click.stop="onNext"
+      >
+        &rsaquo;
+      </button>
+      <div
+        v-if="isMultiple"
+        ref="gallery"
+        class="vgs__gallery"
+      >
         <div
-          class="vgs__gallery__container"
           v-if="images"
+          class="vgs__gallery__title"
+        >
+          {{ imgIndex + 1 }} / {{ images.length }}
+        </div>
+        <div
+          v-if="images"
+          class="vgs__gallery__container"
           :style="{ transform: 'translate(' + galleryXPos + 'px, 0)' }"
         >
           <img
-            class="vgs__gallery__container__img"
-            v-for="(image, i) in images"
-            :src="image"
-            @click.stop="onClickThumb(image, i)"
+            v-for="(img, i) in images"
             :key="i"
+            class="vgs__gallery__container__img"
+            :src="img"
             :class="{ 'vgs__gallery__container__img--active': i === imgIndex}"
+            @click.stop="onClickThumb(img, i)"
           >
         </div>
       </div>
@@ -30,22 +71,48 @@
 
 <script>
 export default {
-  props: ["images", "index"],
-  mounted() {
-    window.addEventListener("keydown", e => {
-      if (e.keyCode === 37) {
-        this.onPrev();
-      }
-
-      if (e.keyCode === 39) {
-        this.onNext();
-      }
-    });
+  props: {
+    images : {
+      type: Array,
+      required: true
+    },
+    index: {
+      type: Number,
+      required: false,
+      default: null
+    }
+  },
+  data() {
+    return {
+      imgIndex: this.index,
+      image: null,
+      galleryXPos: 0,
+      thumbnailWidth: 120
+    };
+  },
+  computed: {
+    imageUrl() {
+      return this.images[this.imgIndex];
+    },
+    isMultiple() {
+      return this.images.length > 1;
+    }
   },
   watch: {
     index(val) {
       this.imgIndex = val;
     }
+  },
+  mounted() {
+    window.addEventListener("keydown", e => {
+      if (e.keyCode === 37) {
+        this.onPrev();
+      } else if (e.keyCode === 39) {
+        this.onNext();
+      } else if (e.keyCode === 27) {
+        this.close();
+      }
+    });
   },
   methods: {
     close() {
@@ -106,22 +173,6 @@ export default {
         this.galleryXPos = -(this.imgIndex * this.thumbnailWidth) + centerPos;
       }
     }
-  },
-  computed: {
-    imageUrl() {
-      return this.images[this.imgIndex];
-    },
-    isMultiple() {
-      return this.images.length > 1;
-    }
-  },
-  data() {
-    return {
-      imgIndex: this.index,
-      image: null,
-      galleryXPos: 0,
-      thumbnailWidth: 120
-    };
   }
 };
 </script>
