@@ -76,7 +76,7 @@ When used with server-side rendering frameworks like Nuxt.js, please wrap the co
   <vgs :images="images" :index="index" @close="index = null" />
 </no-ssr>
 ...
-
+```
 
 ## Contributing
 
