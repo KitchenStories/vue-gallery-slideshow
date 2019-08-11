@@ -69,12 +69,14 @@ const app = new Vue({
 
 When used with server-side rendering frameworks like Nuxt.js, please wrap the component in a `<no-ssr>` element like shown below:
 
+```
 ...
 <img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
 <no-ssr placeholder="loading...">
   <vgs :images="images" :index="index" @close="index = null" />
 </no-ssr>
 ...
+
 
 ## Contributing
 
