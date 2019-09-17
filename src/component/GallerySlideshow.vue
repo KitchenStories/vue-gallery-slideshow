@@ -99,8 +99,15 @@ export default {
     }
   },
   watch: {
-    index(val) {
+    index(val, prev) {
       this.imgIndex = val;
+
+      // updateThumbails when popup
+      if (prev == null && val != null) {
+        this.$nextTick(() => {
+          this.updateThumbails();
+        });
+      }
     }
   },
   mounted() {
