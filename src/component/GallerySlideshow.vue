@@ -28,6 +28,7 @@
         <img
           class="vgs__container__img"
           :src="imageUrl"
+          :alt="alt"
           @click.stop="onNext"
         >
       </div>
@@ -59,8 +60,9 @@
             v-for="(img, i) in images"
             :key="i"
             class="vgs__gallery__container__img"
-            :src="img"
+            :src="typeof img === 'string' ? img : img.url"
             :class="{ 'vgs__gallery__container__img--active': i === imgIndex}"
+            :alt="typeof img === 'string' ? '' : img.alt"
             @click.stop="onClickThumb(img, i)"
           >
         </div>
@@ -92,7 +94,19 @@ export default {
   },
   computed: {
     imageUrl() {
-      return this.images[this.imgIndex];
+      const img = this.images[this.imgIndex];
+      if (typeof img === "string") {
+          return img;
+      }
+      return img.url;
+    },
+    alt() {
+      const img = this.images[this.imgIndex];
+      if (typeof img === "object") {
+          return img.alt;
+      }
+
+      return "";
     },
     isMultiple() {
       return this.images.length > 1;
