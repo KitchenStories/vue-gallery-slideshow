@@ -14,16 +14,20 @@ Lightweight and responsive image gallery for Vue.js.
 
 ## Installation
 
-#### CDN
+#### By CDN
 
 ```html
 <script src="https://unpkg.com/vue-gallery-slideshow"></script>
 ```
 
-#### NPM
+#### By package manager
 
 ```bash
 npm install vue-gallery-slideshow
+```
+
+```bash
+yarn add vue-gallery-slideshow
 ```
 
 ## Usage

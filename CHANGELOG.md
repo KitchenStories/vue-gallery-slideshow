@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] -2019-10-30
+
+### Added
+
+- Alt text option
+
 ## [1.4.0] -2019-08-10
 
 ### Added
