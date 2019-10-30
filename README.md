@@ -65,11 +65,24 @@ const app = new Vue({
 });
 ```
 
+### Options
+
+## Adding alt text
+
+If you want to add alt tags to the images, you can do by wrapping it in an object and adding an `alt` property:
+
+```javascript
+images: [
+   { url: 'https://placem.at/places?w=800&h=600&random=1', alt:'My alt text' },
+   ...
+]
+```
+
 ## Usage with SSR
 
 When used with server-side rendering frameworks like Nuxt.js, please wrap the component in a `<no-ssr>` element like shown below:
 
-```
+```html
 ...
 <img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
 <no-ssr placeholder="loading...">
@@ -82,11 +95,11 @@ When used with server-side rendering frameworks like Nuxt.js, please wrap the co
 
 Please refer to each project's style guidelines and guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
 
-1.  **Fork** the repo on GitHub
-2.  **Clone** the project to your machine
-3.  **Commit** changes to your branch
-4.  **Push** your work back up to your fork
-5.  Submit a **Pull request** so that we can review your changes
+1. **Fork** the repo on GitHub
+2. **Clone** the project to your machine
+3. **Commit** changes to your branch
+4. **Push** your work back up to your fork
+5. Submit a **Pull request** so that we can review your changes
 
 NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
