@@ -31,6 +31,7 @@
           :alt="alt"
           @click.stop="onNext"
         >
+        <slot></slot>
       </div>
       <button
         v-if="isMultiple"
