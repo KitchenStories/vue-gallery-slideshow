@@ -89,9 +89,9 @@ When used with server-side rendering frameworks like Nuxt.js, please wrap the co
 ```html
 ...
 <img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
-<no-ssr placeholder="loading...">
+<client-only placeholder="Loading...">
   <vgs :images="images" :index="index" @close="index = null" />
-</no-ssr>
+</client-only>
 ...
 ```
 
