@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/KitchenStories/vue-gallery-slideshow.svg?branch=master)](https://travis-ci.org/KitchenStories/vue-gallery-slideshow)
-
 ![npm](https://img.shields.io/npm/dt/vue-gallery-slideshow.svg)
 
 # vue-gallery-slideshow
@@ -82,9 +80,9 @@ images: [
 ]
 ```
 
-## Usage with SSR
+## Usage with Nuxt.js
 
-When used with server-side rendering frameworks like Nuxt.js, please wrap the component in a `<no-ssr>` element like shown below:
+When used with server-side rendering frameworks like Nuxt.js, please wrap the component in a `<client-only>` element like shown below:
 
 ```html
 ...
