@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.1] -2020-07-14
+
+### Fixed
+
+- Added vue-runtime-helpers to project's bundle
+
 ## [1.5.0] -2019-10-30
 
 ### Added
