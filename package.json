@@ -47,7 +47,7 @@
   "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
-    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-object-assign": "^7.10.4",
     "@babel/preset-env": "^7.6.3",
     "chromedriver": "^75.1.0",
     "cross-spawn": "^6.0.5",
@@ -60,12 +60,12 @@
     "path": "^0.12.7",
     "phantomjs-prebuilt": "^2.1.16",
     "rollup": "^1.26.0",
-    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-terser": "^5.1.2",
     "rollup-plugin-vue": "^5.1.2",
     "selenium-server": "^3.141.59",
-    "vue-template-compiler": "^2.6.10",
+    "vue-template-compiler": "^2.6.11",
     "webdriver-manager": "^12.1.7"
   },
   "browserslist": [
