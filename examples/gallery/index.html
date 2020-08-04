@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script type="text/javascript" src="../../dist/js/vue-gallery-slideshow.js"></script>
+    <script
+      type="text/javascript"
+      src="../../dist/js/vue-gallery-slideshow.js"
+    ></script>
     <style>
       body {
         font-family: sans-serif;
@@ -19,35 +22,89 @@
         border: 1px solid lightgray;
         object-fit: contain;
       }
+      .rotate1 {
+        transform: rotate(90deg);
+      }
+      .rotate2 {
+        transform: rotate(180deg);
+      }
+      .rotate3 {
+        transform: rotate(270deg);
+      }
     </style>
   </head>
   <body>
     <div id="app">
-      <img class="image" v-for="(image, i) in images" :src="image" @click="index = i">
-      <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+      <img
+        v-for="(image, i) in images"
+        :src="image.url"
+        @click="index = i"
+        :class="
+				`image ${
+					image.hasOwnProperty('rotate')
+						? 'rotate' + image.rotate
+						: ''
+				}`"
+      />
+      <vue-gallery-slideshow
+        :images="images"
+        :index="index"
+        @close="index = null"
+        @rotate="rotate"
+      ></vue-gallery-slideshow>
     </div>
     <script>
       new Vue({
-        el: '#app',
+        el: "#app",
         components: {
           VueGallerySlideshow
         },
         data: {
+          //example of simple images array  :
+          // images: [
+          //   "https://placem.at/places?w=800&h=600&random=1",
+          //   "https://placem.at/places?w=1200&h=400&random=2",
+          //   "https://placem.at/places?w=800&h=800&random=3",
+          //   "https://placem.at/places?w=600&h=800&random=4",
+          //   "https://placem.at/places?w=400&h=800&random=5",
+          //   "https://placem.at/places?w=800&h=800&random=6",
+          //   "https://placem.at/places?w=800&h=800&random=7",
+          //   "https://placem.at/places?w=800&h=800&random=8",
+          //   "https://placem.at/places?w=800&h=800&random=9",
+          //   "https://placem.at/places?w=800&h=800&random=10"
+          // ],
+
+          // example of images array with alt, and rotate possibility
           images: [
-            'https://placem.at/places?w=800&h=600&random=1',
-            'https://placem.at/places?w=1200&h=400&random=2',
-            'https://placem.at/places?w=800&h=800&random=3',
-            'https://placem.at/places?w=600&h=800&random=4',
-            'https://placem.at/places?w=400&h=800&random=5',
-            'https://placem.at/places?w=800&h=800&random=6',
-            'https://placem.at/places?w=800&h=800&random=7',
-            'https://placem.at/places?w=800&h=800&random=8',
-            'https://placem.at/places?w=800&h=800&random=9',
-            'https://placem.at/places?w=800&h=800&random=10'
+            {
+              url: "https://placem.at/places?w=800&h=600&random=1",
+              alt: "My alt text",
+              rotate: 0
+            },
+            {
+              url: "https://placem.at/places?w=1200&h=400&random=2",
+              alt: "My alt text",
+              rotate: 0
+            },
+            {
+              url: "https://placem.at/places?w=800&h=800&random=3",
+              alt: "My alt text",
+              rotate: 0
+            },
+            {
+              url: "https://placem.at/places?w=600&h=800&random=4",
+              alt: "My alt text",
+              rotate: 0
+            }
           ],
           index: null
+        },
+        methods: {
+          rotate(img) {
+            this.images[img.index].rotate = img.newAngle;
+          }
         }
-      })
+      });
     </script>
   </body>
 </html>
