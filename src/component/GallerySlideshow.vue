@@ -1,57 +1,15 @@
 <template>
   <transition name="modal">
-    <div
-      v-if="imgIndex !== null"
-      class="vgs"
-      @click="close"
-    >
-      <button
-        type="button"
-        class="vgs__close"
-        @click="close"
-      >
-        &times;
-      </button>
-      <button
-        v-if="isMultiple"
-        type="button"
-        class="vgs__prev"
-        @click.stop="onPrev"
-      >
-        &lsaquo;
-      </button>
-      <div
-        v-if="images"
-        class="vgs__container"
-        @click.stop="onNext"
-      >
-        <img
-          class="vgs__container__img"
-          :src="imageUrl"
-          :alt="alt"
-          @click.stop="onNext"
-        >
+    <div v-if="imgIndex !== null" class="vgs" @click="close">
+      <button type="button" class="vgs__close" @click="close">&times;</button>
+      <button v-if="isMultiple" type="button" class="vgs__prev" @click.stop="onPrev">&lsaquo;</button>
+      <div v-if="images" class="vgs__container" @click.stop="onNext">
+        <img class="vgs__container__img" :src="imageUrl" :alt="alt" @click.stop="onNext" />
         <slot></slot>
       </div>
-      <button
-        v-if="isMultiple"
-        type="button"
-        class="vgs__next"
-        @click.stop="onNext"
-      >
-        &rsaquo;
-      </button>
-      <div
-        v-if="isMultiple"
-        ref="gallery"
-        class="vgs__gallery"
-      >
-        <div
-          v-if="images"
-          class="vgs__gallery__title"
-        >
-          {{ imgIndex + 1 }} / {{ images.length }}
-        </div>
+      <button v-if="isMultiple" type="button" class="vgs__next" @click.stop="onNext">&rsaquo;</button>
+      <div v-if="isMultiple" ref="gallery" class="vgs__gallery">
+        <div v-if="images" class="vgs__gallery__title">{{ imgIndex + 1 }} / {{ images.length }}</div>
         <div
           v-if="images"
           class="vgs__gallery__container"
@@ -65,7 +23,7 @@
             :class="{ 'vgs__gallery__container__img--active': i === imgIndex}"
             :alt="typeof img === 'string' ? '' : img.alt"
             @click.stop="onClickThumb(img, i)"
-          >
+          />
         </div>
       </div>
     </div>
@@ -75,43 +33,43 @@
 <script>
 export default {
   props: {
-    images : {
+    images: {
       type: Array,
-      required: true
+      required: true,
     },
     index: {
       type: Number,
       required: false,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
       imgIndex: this.index,
       image: null,
       galleryXPos: 0,
-      thumbnailWidth: 120
+      thumbnailWidth: 120,
     };
   },
   computed: {
     imageUrl() {
       const img = this.images[this.imgIndex];
       if (typeof img === "string") {
-          return img;
+        return img;
       }
       return img.url;
     },
     alt() {
       const img = this.images[this.imgIndex];
       if (typeof img === "object") {
-          return img.alt;
+        return img.alt;
       }
 
       return "";
     },
     isMultiple() {
       return this.images.length > 1;
-    }
+    },
   },
   watch: {
     index(val, prev) {
@@ -123,10 +81,10 @@ export default {
           this.updateThumbails();
         });
       }
-    }
+    },
   },
   mounted() {
-    window.addEventListener("keydown", e => {
+    window.addEventListener("keydown", (e) => {
       if (e.keyCode === 37) {
         this.onPrev();
       } else if (e.keyCode === 39) {
@@ -194,8 +152,8 @@ export default {
       } else {
         this.galleryXPos = -(this.imgIndex * this.thumbnailWidth) + centerPos;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
