@@ -4,23 +4,63 @@
       <button type="button" class="vgs__close" @click="close">&times;</button>
       <button v-if="isMultiple" type="button" class="vgs__prev" @click.stop="onPrev">&lsaquo;</button>
       <div v-if="images" class="vgs__container" @click.stop="onNext">
-        <img class="vgs__container__img" :src="imageUrl" :alt="alt" @click.stop="onNext" />
+        <img
+          :class="
+						`vgs__container__img ${
+							images[this.imgIndex].hasOwnProperty('rotate')
+								? 'rotate' + images[this.imgIndex].rotate
+								: ''
+						}`
+					"
+          :src="imageUrl"
+          :alt="alt"
+          @click.stop="onNext"
+        />
         <slot></slot>
       </div>
       <button v-if="isMultiple" type="button" class="vgs__next" @click.stop="onNext">&rsaquo;</button>
+      <button
+        v-if="
+					images[this.imgIndex].hasOwnProperty('rotate')
+				"
+        class="rotateBtn__left"
+        @click.stop="rotateL(imgIndex)"
+      >turn left</button>
+      <button
+        v-if="
+					images[this.imgIndex].hasOwnProperty('rotate')
+				"
+        class="rotateBtn__right"
+        @click.stop="rotateR(imgIndex)"
+      >turn right</button>
       <div v-if="isMultiple" ref="gallery" class="vgs__gallery">
         <div v-if="images" class="vgs__gallery__title">{{ imgIndex + 1 }} / {{ images.length }}</div>
         <div
           v-if="images"
           class="vgs__gallery__container"
-          :style="{ transform: 'translate(' + galleryXPos + 'px, 0)' }"
+          :style="{
+						transform:
+							'translate(' + galleryXPos + 'px, 0)',
+					}"
         >
           <img
             v-for="(img, i) in images"
             :key="i"
             class="vgs__gallery__container__img"
             :src="typeof img === 'string' ? img : img.url"
-            :class="{ 'vgs__gallery__container__img--active': i === imgIndex}"
+            :class="
+							`${
+								i === imgIndex
+									? 'vgs__gallery__container__img--active'
+									: ''
+							} ${
+								typeof img === 'object' &&
+								img.hasOwnProperty('rotate')
+									? ''
+									: 'rotate' + img.rotate
+							}
+						`
+						"
             :alt="typeof img === 'string' ? '' : img.alt"
             @click.stop="onClickThumb(img, i)"
           />
@@ -151,6 +191,36 @@ export default {
         );
       } else {
         this.galleryXPos = -(this.imgIndex * this.thumbnailWidth) + centerPos;
+      }
+    },
+    rotateL(index) {
+      if (this.images[this.imgIndex].rotate === 0) {
+        const newAngle = 3;
+        this.$emit("rotate", {
+          index,
+          newAngle,
+        });
+      } else {
+        const newAngle = --this.images[this.imgIndex].rotate;
+        this.$emit("rotate", {
+          index,
+          newAngle,
+        });
+      }
+    },
+    rotateR(index) {
+      if (this.images[this.imgIndex].rotate === 3) {
+        const newAngle = 0;
+        this.$emit("rotate", {
+          index,
+          newAngle,
+        });
+      } else {
+        const newAngle = ++this.images[this.imgIndex].rotate;
+        this.$emit("rotate", {
+          index,
+          newAngle,
+        });
       }
     },
   },
@@ -331,5 +401,26 @@ $screen-md-max: ($screen-lg - 1);
 
 .modal-leave-active {
   opacity: 0;
+}
+
+.rotateBtn {
+  &__right {
+    position: absolute;
+    top: 61vh;
+  }
+  &__left {
+    margin-left: -100px;
+    position: absolute;
+    top: 61vh;
+  }
+}
+.rotate1 {
+  transform: rotate(90deg);
+}
+.rotate2 {
+  transform: rotate(180deg);
+}
+.rotate3 {
+  transform: rotate(270deg);
 }
 </style>
