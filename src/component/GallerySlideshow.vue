@@ -19,20 +19,29 @@
         <slot></slot>
       </div>
       <button v-if="isMultiple" type="button" class="vgs__next" @click.stop="onNext">&rsaquo;</button>
-      <button
+
+      <img
         v-if="
 					images[this.imgIndex].hasOwnProperty('rotate')
 				"
+        src="../../public/images/rLeft.png"
+        alt="turn left"
         class="rotateBtn__left"
+        width="30px"
+        height="30px"
         @click.stop="rotateL(imgIndex)"
-      >turn left</button>
-      <button
+      />
+      <img
         v-if="
 					images[this.imgIndex].hasOwnProperty('rotate')
 				"
+        src="../../public/images/rRight.png"
+        alt="turn right"
         class="rotateBtn__right"
+        width="30px"
+        height="30px"
         @click.stop="rotateR(imgIndex)"
-      >turn right</button>
+      />
       <div v-if="isMultiple" ref="gallery" class="vgs__gallery">
         <div v-if="images" class="vgs__gallery__title">{{ imgIndex + 1 }} / {{ images.length }}</div>
         <div
@@ -413,13 +422,16 @@ $screen-md-max: ($screen-lg - 1);
 
 .rotateBtn {
   &__right {
+    margin-right: -50px;
     position: absolute;
     bottom: 200px;
+    cursor: pointer;
   }
   &__left {
-    margin-left: -80px;
+    margin-left: -50px;
     position: absolute;
     bottom: 200px;
+    cursor: pointer;
   }
 }
 .rotate1 {
