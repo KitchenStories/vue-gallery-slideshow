@@ -34,33 +34,43 @@ yarn add vue-gallery-slideshow
 
 ```html
 <div id="app">
-  <img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
-  <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+  <img
+    class="image"
+    v-for="(image, i) in images"
+    :src="image"
+    :key="i"
+    @click="index = i"
+  />
+  <vue-gallery-slideshow
+    :images="images"
+    :index="index"
+    @close="index = null"
+  ></vue-gallery-slideshow>
 </div>
 ```
 
 #### JavaScript
 
 ```javascript
-import VueGallerySlideshow from 'vue-gallery-slideshow';
+import VueGallerySlideshow from "vue-gallery-slideshow";
 
 const app = new Vue({
-  el: '#app',
+  el: "#app",
   components: {
     VueGallerySlideshow
   },
   data: {
     images: [
-      'https://placekitten.com/801/800',
-      'https://placekitten.com/802/800',
-      'https://placekitten.com/803/800',
-      'https://placekitten.com/804/800',
-      'https://placekitten.com/805/800',
-      'https://placekitten.com/806/800',
-      'https://placekitten.com/807/800',
-      'https://placekitten.com/808/800',
-      'https://placekitten.com/809/800',
-      'https://placekitten.com/810/800'
+      "https://placekitten.com/801/800",
+      "https://placekitten.com/802/800",
+      "https://placekitten.com/803/800",
+      "https://placekitten.com/804/800",
+      "https://placekitten.com/805/800",
+      "https://placekitten.com/806/800",
+      "https://placekitten.com/807/800",
+      "https://placekitten.com/808/800",
+      "https://placekitten.com/809/800",
+      "https://placekitten.com/810/800"
     ],
     index: null
   }
@@ -80,13 +90,30 @@ images: [
 ]
 ```
 
+## Adding rotate image
+
+If you want to add the possibility to rotate the images, you can do by wrapping it in an object and adding an `rotate` property equal to 0:
+
+```javascript
+images: [
+   { url: 'https://placem.at/places?w=800&h=600&random=1', rotate:0 },
+   ...
+]
+```
+
 ## Usage with Nuxt.js
 
 When used with server-side rendering frameworks like Nuxt.js, please wrap the component in a `<client-only>` element like shown below:
 
 ```html
 ...
-<img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
+<img
+  class="image"
+  v-for="(image, i) in images"
+  :src="image"
+  :key="i"
+  @click="index = i"
+/>
 <client-only placeholder="Loading...">
   <vgs :images="images" :index="index" @close="index = null" />
 </client-only>
