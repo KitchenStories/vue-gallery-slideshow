@@ -1,44 +1,30 @@
 <template>
   <transition name="modal">
     <div v-if="imgIndex !== null" class="vgs" @click="close">
-      <button type="button" class="vgs__close" @click="close">
-        &times;
-      </button>
-      <button
-        v-if="isMultiple"
-        type="button"
-        class="vgs__prev"
-        @click.stop="onPrev"
-      >
-        &lsaquo;
-      </button>
+      <button type="button" class="vgs__close" @click="close">&times;</button>
+      <button v-if="isMultiple" type="button" class="vgs__prev" @click.stop="onPrev">&lsaquo;</button>
       <div v-if="images" class="vgs__container" @click.stop="onNext">
         <img
           :class="
-            `vgs__container__img ${
-              images[this.imgIndex].hasOwnProperty('rotate')
-                ? 'rotate' + images[this.imgIndex].rotate
-                : ''
-            }`
-          "
+						`vgs__container__img ${
+							images[this.imgIndex].hasOwnProperty('rotate')
+								? 'rotate' + images[this.imgIndex].rotate
+								: ''
+						}`
+					"
           :src="imageUrl"
           :alt="alt"
           @click.stop="onNext"
         />
         <slot></slot>
       </div>
-      <button
-        v-if="isMultiple"
-        type="button"
-        class="vgs__next"
-        @click.stop="onNext"
-      >
-        &rsaquo;
-      </button>
+      <button v-if="isMultiple" type="button" class="vgs__next" @click.stop="onNext">&rsaquo;</button>
 
       <img
-        v-if="images[this.imgIndex].hasOwnProperty('rotate')"
-        src="../../public/images/rLeft.png"
+        v-if="
+					images[this.imgIndex].hasOwnProperty('rotate')
+				"
+        src="../../images/rLeft.png"
         alt="turn left"
         class="rotateBtn__left"
         width="30px"
@@ -46,8 +32,10 @@
         @click.stop="rotateL(imgIndex)"
       />
       <img
-        v-if="images[this.imgIndex].hasOwnProperty('rotate')"
-        src="../../public/images/rRight.png"
+        v-if="
+					images[this.imgIndex].hasOwnProperty('rotate')
+				"
+        src="../../images/rRight.png"
         alt="turn right"
         class="rotateBtn__right"
         width="30px"
@@ -55,15 +43,14 @@
         @click.stop="rotateR(imgIndex)"
       />
       <div v-if="isMultiple" ref="gallery" class="vgs__gallery">
-        <div v-if="images" class="vgs__gallery__title">
-          {{ imgIndex + 1 }} / {{ images.length }}
-        </div>
+        <div v-if="images" class="vgs__gallery__title">{{ imgIndex + 1 }} / {{ images.length }}</div>
         <div
           v-if="images"
           class="vgs__gallery__container`"
           :style="{
-            transform: 'translate(' + galleryXPos + 'px, 0)'
-          }"
+						transform:
+							'translate(' + galleryXPos + 'px, 0)',
+					}"
         >
           <img
             v-for="(img, i) in images"
@@ -71,15 +58,18 @@
             class="vgs__gallery__container__img"
             :src="typeof img === 'string' ? img : img.url"
             :class="
-              `${
-                i === imgIndex ? 'vgs__gallery__container__img--active' : ''
-              } ${
-                typeof img === 'object' && img.hasOwnProperty('rotate')
-                  ? 'rotate' + img.rotate
-                  : ''
-              }
+							`${
+								i === imgIndex
+									? 'vgs__gallery__container__img--active'
+									: ''
+							} ${
+								typeof img === 'object' &&
+								img.hasOwnProperty('rotate')
+									? 'rotate' + img.rotate
+									: ''
+							}
 						`
-            "
+						"
             :alt="typeof img === 'string' ? '' : img.alt"
             @click.stop="onClickThumb(img, i)"
           />
