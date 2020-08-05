@@ -321,6 +321,7 @@ $screen-md-max: ($screen-lg - 1);
     right: 0;
   }
   &__container {
+    z-index: 5;
     position: absolute;
     overflow: hidden;
     cursor: pointer;
@@ -332,6 +333,8 @@ $screen-md-max: ($screen-lg - 1);
     height: 60vh;
     border-radius: $radius-large;
     background-color: $black;
+    transition: all 0.5s ease-out;
+
     @include respond-to(xs) {
       width: 100%;
       max-width: 100%;
@@ -348,6 +351,11 @@ $screen-md-max: ($screen-lg - 1);
       height: 100%;
       object-fit: contain;
     }
+  }
+  &__container:hover {
+    height: 80vh;
+    max-width: 90vw;
+    transition: all 0.5s ease-out;
   }
 }
 
@@ -406,12 +414,12 @@ $screen-md-max: ($screen-lg - 1);
 .rotateBtn {
   &__right {
     position: absolute;
-    top: 61vh;
+    bottom: 200px;
   }
   &__left {
-    margin-left: -100px;
+    margin-left: -80px;
     position: absolute;
-    top: 61vh;
+    bottom: 200px;
   }
 }
 .rotate1 {
