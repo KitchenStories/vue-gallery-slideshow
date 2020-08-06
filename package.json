@@ -1,6 +1,6 @@
 {
-  "name": "vue-gallery-slideshow",
-  "version": "1.5.1",
+  "name": "vue-gallery-slideshow-laurent",
+  "version": "1.6.1",
   "description": "Lightweight and responsive image gallery for Vue.js.",
   "main": "dist/js/vue-gallery-slideshow.js",
   "jsnext:main": "src/index.js",
@@ -82,5 +82,9 @@
   ],
   "dependencies": {
     "vue-runtime-helpers": "^1.1.2"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
   }
 }
