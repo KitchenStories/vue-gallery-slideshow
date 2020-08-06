@@ -119,13 +119,6 @@ export default {
     isMultiple() {
       return this.images.length > 1;
     }
-    // angle() {
-    // 	if (this.imgIndex !== null) {
-    // 		return this.images[this.imgIndex].rotate;
-    // 	} else {
-    // 		return 0;
-    // 	}
-    // },
   },
   watch: {
     index(val, prev) {
