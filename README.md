@@ -35,7 +35,12 @@ yarn add vue-gallery-slideshow
 ```html
 <div id="app">
   <img
-    class="image"
+    :class="
+				`image ${
+					image.hasOwnProperty('rotate')
+						? 'rotate' + image.rotate
+						: ''
+				}`"
     v-for="(image, i) in images"
     :src="image"
     :key="i"
@@ -45,6 +50,7 @@ yarn add vue-gallery-slideshow
     :images="images"
     :index="index"
     @close="index = null"
+    @rotate="rotate"
   ></vue-gallery-slideshow>
 </div>
 ```
@@ -95,10 +101,18 @@ images: [
 If you want to add the possibility to rotate the images, you can do by wrapping it in an object and adding an `rotate` property equal to 0:
 
 ```javascript
-images: [
+data: {
+  images: [
    { url: 'https://placem.at/places?w=800&h=600&random=1', rotate:0 },
    ...
-]
+  ],
+  index: null
+},
+methods: {
+  rotate(img) {
+    this.images[img.index].rotate = img.newAngle;
+  }
+}
 ```
 
 ## Usage with Nuxt.js
