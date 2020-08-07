@@ -44,7 +44,7 @@
   "bugs": {
     "url": "https://github.com/KitchenStories/vue-gallery-slideshow/issues"
   },
-  "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
+  "homepage": "",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-object-assign": "^7.10.4",
@@ -81,6 +81,7 @@
     "OperaMobile >= 12"
   ],
   "dependencies": {
+    "mdi-vue": "^1.6.5",
     "vue-runtime-helpers": "^1.1.2"
   },
   "directories": {

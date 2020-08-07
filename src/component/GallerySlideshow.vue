@@ -1,6 +1,25 @@
 <template>
   <transition name="modal">
     <div v-if="imgIndex !== null" class="vgs" @click="close">
+      <button
+        class="rotateBtn__left"
+        @click.stop="rotateL(imgIndex)"
+        v-if="
+					images[this.imgIndex].hasOwnProperty('rotate')
+				"
+      >
+        <RotateLeftIcon />
+      </button>
+      <button
+        class="rotateBtn__right"
+        @click.stop="rotateR(imgIndex)"
+        v-if="
+					images[this.imgIndex].hasOwnProperty('rotate')
+				"
+      >
+        <RotateRightIcon />
+      </button>
+
       <button type="button" class="vgs__close" @click="close">&times;</button>
       <button v-if="isMultiple" type="button" class="vgs__prev" @click.stop="onPrev">&lsaquo;</button>
       <div v-if="images" class="vgs__container" @click.stop="onNext">
@@ -19,29 +38,6 @@
         <slot></slot>
       </div>
       <button v-if="isMultiple" type="button" class="vgs__next" @click.stop="onNext">&rsaquo;</button>
-
-      <img
-        v-if="
-					images[this.imgIndex].hasOwnProperty('rotate')
-				"
-        src="../../images/rLeft.png"
-        alt="turn left"
-        class="rotateBtn__left"
-        width="30px"
-        height="30px"
-        @click.stop="rotateL(imgIndex)"
-      />
-      <img
-        v-if="
-					images[this.imgIndex].hasOwnProperty('rotate')
-				"
-        src="../../images/rRight.png"
-        alt="turn right"
-        class="rotateBtn__right"
-        width="30px"
-        height="30px"
-        @click.stop="rotateR(imgIndex)"
-      />
       <div v-if="isMultiple" ref="gallery" class="vgs__gallery">
         <div v-if="images" class="vgs__gallery__title">{{ imgIndex + 1 }} / {{ images.length }}</div>
         <div
@@ -80,7 +76,14 @@
 </template>
 
 <script>
+import RotateRightIcon from "mdi-vue/RotateRightVariant.vue"; // raw vue component
+import RotateLeftIcon from "mdi-vue/RotateLeftVariant.vue"; // raw vue component
+
 export default {
+  components: {
+    RotateRightIcon,
+    RotateLeftIcon
+  },
   props: {
     images: {
       type: Array,
@@ -119,6 +122,13 @@ export default {
     isMultiple() {
       return this.images.length > 1;
     }
+    // angle() {
+    // 	if (this.imgIndex !== null) {
+    // 		return this.images[this.imgIndex].rotate;
+    // 	} else {
+    // 		return 0;
+    // 	}
+    // },
   },
   watch: {
     index(val, prev) {
@@ -422,17 +432,22 @@ $screen-md-max: ($screen-lg - 1);
 
 .rotateBtn {
   &__right {
-    margin-right: -50px;
-
+    background-color: #000;
+    margin-left: -50px;
+    color: #fff;
     position: absolute;
     bottom: 200px;
     cursor: pointer;
+    border: $black;
   }
   &__left {
-    margin-left: -50px;
+    background-color: #000;
+    margin-right: -50px;
     position: absolute;
     bottom: 200px;
     cursor: pointer;
+    color: #fff;
+    border: $black;
   }
 }
 .rotate1 {
