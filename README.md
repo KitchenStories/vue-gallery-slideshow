@@ -1,8 +1,10 @@
 ![npm](https://img.shields.io/npm/dt/vue-gallery-slideshow.svg)
 
-# vue-gallery-slideshow
+# vue-gallery-slideshow-bisom-health-care
 
+This repository is a fork of [https://github.com/KitchenStories/vue-gallery-slideshow](https://github.com/KitchenStories/vue-gallery-slideshow)
 Lightweight and responsive image gallery for Vue.js.
+Here, we add a zoom effect hovering over the image, and the possibility to rotate image.
 
 ![](https://github.com/KitchenStories/vue-gallery-slideshow/blob/master/images/demo.gif)
 
@@ -12,20 +14,10 @@ Lightweight and responsive image gallery for Vue.js.
 
 ## Installation
 
-#### By CDN
-
-```html
-<script src="https://unpkg.com/vue-gallery-slideshow"></script>
-```
-
 #### By package manager
 
 ```bash
-npm install vue-gallery-slideshow
-```
-
-```bash
-yarn add vue-gallery-slideshow
+npm i vue-gallery-slideshow-bisom-health-care
 ```
 
 ## Usage
@@ -148,7 +140,7 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
 ## Author
 
-Norman Sander
+Norman Sander and edit by Mahieu Laurent
 
 ## License
 
