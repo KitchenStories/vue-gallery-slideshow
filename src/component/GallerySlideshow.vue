@@ -138,8 +138,11 @@ export default {
   },
   methods: {
     close() {
+      const eventData = {
+        imgIndex: this.imgIndex
+      };
       this.imgIndex = null;
-      this.$emit("close");
+      this.$emit("close", eventData);
     },
     onPrev() {
       if (this.imgIndex === null) return;
