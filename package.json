@@ -1,6 +1,6 @@
 {
   "name": "vue-gallery-slideshow",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Lightweight and responsive image gallery for Vue.js.",
   "main": "dist/js/vue-gallery-slideshow.js",
   "jsnext:main": "src/index.js",

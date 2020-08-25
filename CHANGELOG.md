@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.2] -2020-08-25
+
+### Fixed
+
+- On close event, you should return last index `imgIndex` https://github.com/KitchenStories/vue-gallery-slideshow/issues/17
+
 ## [1.5.1] -2020-07-14
 
 ### Fixed
