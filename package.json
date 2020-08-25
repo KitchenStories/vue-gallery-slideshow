@@ -1,6 +1,6 @@
 {
-  "name": "vue-gallery-slideshow",
-  "version": "1.5.1",
+  "name": "vue-gallery-slideshow-bisom-health-care",
+  "version": "0.0.1",
   "description": "Lightweight and responsive image gallery for Vue.js.",
   "main": "dist/js/vue-gallery-slideshow.js",
   "jsnext:main": "src/index.js",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KitchenStories/vue-gallery-slideshow.git"
+    "url": "git+https://github.com/BisomHealthCare/vue-gallery-slideshow.git"
   },
   "keywords": [
     "vue-gallery-slideshow",
@@ -42,9 +42,9 @@
   "author": "Norman Sander",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KitchenStories/vue-gallery-slideshow/issues"
+    "url": "https://github.com/BisomHealthCare/vue-gallery-slideshow/issues"
   },
-  "homepage": "https://github.com/KitchenStories/vue-gallery-slideshow#readme",
+  "homepage": "https://github.com/BisomHealthCare/vue-gallery-slideshow/blob/master/README.md",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-object-assign": "^7.10.4",
@@ -81,6 +81,11 @@
     "OperaMobile >= 12"
   ],
   "dependencies": {
+    "mdi-vue": "^1.6.5",
     "vue-runtime-helpers": "^1.1.2"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
   }
 }
